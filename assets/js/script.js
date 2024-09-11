@@ -1,5 +1,13 @@
+const logo = document.querySelector('.logo');
+
+logo.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -9,7 +17,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 
-    // Fade in sections on scroll
     const sections = document.querySelectorAll('section');
     const fadeInSection = (entries, observer) => {
         entries.forEach(entry => {
@@ -58,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
         nav.classList.toggle('active');
     });
 
-    // Close menu when a link is clicked
     const navLinks = document.querySelectorAll('nav ul li a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -67,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', function(event) {
         const isClickInsideNav = nav.contains(event.target);
         const isClickOnMenuIcon = menuIcon.contains(event.target);
@@ -96,3 +101,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', (event) => {
+    const animateOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section, #skills dt, #skills dd, #projects article, .contact-info ul li, .form-group').forEach((el) => {
+        animateOnScroll.observe(el);
+    });
+});
