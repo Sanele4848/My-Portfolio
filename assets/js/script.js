@@ -88,10 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 100) { // You can adjust this value
-            scrollToTopBtn.classList.add('visible'); // Change: add class to show button
+        if (window.pageYOffset > 100) { 
+            scrollToTopBtn.classList.add('visible'); 
         } else {
-            scrollToTopBtn.classList.remove('visible'); // Change: remove class to hide button
+            scrollToTopBtn.classList.remove('visible');
         }
     });
 
