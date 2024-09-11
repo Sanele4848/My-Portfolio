@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap');
 
 :root {
-    --primary-color: #1a1a1a;
-    --secondary-color: #f8f8f8;
-    --accent-color: #3d5a80;
-    --text-color: #333333;
+    --primary-color: #2c3e50;
+    --secondary-color: #ecf0f1;
+    --accent-color-1: #e74c3c;
+    --accent-color-2: #3498db;
+    --accent-color-3: #2ecc71;
+    --text-color: #34495e;
     --background-color: #ffffff;
+    --hover-color: #16a085;
+    --muted-color: #95a5a6;
     --transition-speed: 0.3s;
 }
 
@@ -14,8 +18,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
 
 @keyframes scaleIn {
     from {
@@ -48,7 +50,7 @@ header {
     width: 100%;
     z-index: 1000;
     transition: all 0.5s ease;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(44, 62, 80, 0.95);
 }
 
 header .container {
@@ -62,7 +64,7 @@ header .container {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.5rem;
     font-weight: 300;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
     letter-spacing: 2px;
     transition: all 0.3s ease;
@@ -70,7 +72,7 @@ header .container {
 }
 
 .logo:hover {
-    color: var(--accent-color);
+    color: var(--accent-color-2);
 }
 
 .menu-icon {
@@ -88,7 +90,7 @@ header .container {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     transition: all 0.3s ease;
 }
 
@@ -103,7 +105,7 @@ header .container {
         right: -100%;
         width: 80%;
         height: 100vh;
-        background-color: var(--background-color);
+        background-color: var(--primary-color);
         padding: 80px 20px 20px;
         transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
@@ -159,7 +161,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--text-color);
+    color: var(--secondary-color);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
@@ -177,14 +179,14 @@ nav ul li a::before {
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: var(--accent-color);
+    background-color: var(--accent-color-2);
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color-2);
 }
 
 nav ul li a:hover::before {
@@ -212,17 +214,16 @@ nav ul li a:hover::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
     animation: fadeIn 1s ease-out;
 }
 
 .parallax-content {
     text-align: center;
     color: var(--secondary-color);
-    background-color: rgba(26, 26, 26, 0.7);
+    background-color: rgba(44, 62, 80, 0.8);
     padding: 20px;
     border-radius: 3px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(4px);
     position: relative;
     z-index: 1;
     animation: scaleIn 0.8s ease-out;
@@ -232,7 +233,6 @@ nav ul li a:hover::before {
     overflow-wrap: break-word;
     overflow: auto;
 }
-
 
 @media (max-width: 768px) {
     .parallax-content {
@@ -262,14 +262,14 @@ nav ul li a:hover::before {
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    background-color: var(--accent-color);
+    background-color: var(--accent-color-1);
     color: var(--secondary-color);
     text-decoration: none;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--accent-color-1);
     position: relative;
     overflow: hidden;
 }
@@ -291,7 +291,7 @@ nav ul li a:hover::before {
 
 .btn:hover {
     background-color: transparent;
-    color: var(--accent-color);
+    color: var(--accent-color-1);
 }
 
 main {
@@ -326,7 +326,7 @@ h2::after {
     left: 0;
     width: 60px;
     height: 1px;
-    background-color: var(--accent-color);
+    background-color: var(--accent-color-3);
     transition: width 0.5s ease;
 }
 
@@ -347,6 +347,10 @@ section.visible p {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.2s;
+}
+
+#skills {
+    background-color: var(--secondary-color);
 }
 
 #skills dl {
@@ -409,14 +413,18 @@ section.visible #projects article {
 
 #projects article:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(52, 152, 219, 0.2);
 }
 
 #projects h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: var(--primary-color);
+    color: var(--accent-color-2);
+}
+
+#contact {
+    background-color: var(--secondary-color);
 }
 
 #contact address {
@@ -424,7 +432,7 @@ section.visible #projects article {
 }
 
 #contact a {
-    color: var(--accent-color);
+    color: var(--accent-color-1);
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
@@ -437,7 +445,7 @@ section.visible #projects article {
     height: 1px;
     bottom: -2px;
     left: 0;
-    background-color: var(--accent-color);
+    background-color: var(--accent-color-1);
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease;
@@ -446,10 +454,6 @@ section.visible #projects article {
 #contact a:hover::after {
     visibility: visible;
     transform: scaleX(1);
-}
-
-#contact {
-    background-color: var(--secondary-color);
 }
 
 .contact-wrapper {
@@ -507,7 +511,7 @@ section.visible .contact-info ul li {
 
 .contact-info ul li i {
     margin-right: 10px;
-    color: var(--accent-color);
+    color: var(--accent-color-3);
     font-size: 1.2rem;
 }
 
@@ -518,7 +522,7 @@ section.visible .contact-info ul li {
 }
 
 .contact-info ul li a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color-2);
 }
 
 .contact-form form {
@@ -536,6 +540,7 @@ section.visible .contact-info ul li {
     height: auto;
     border-radius: 2px;
 }
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -574,8 +579,8 @@ section.visible .form-group {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px rgba(61, 90, 128, 0.2);
+    border-color: var(--accent-color-2);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
 
 .form-group textarea {
@@ -617,7 +622,7 @@ footer::before {
     left: 0;
     right: 0;
     height: 5px;
-    background: linear-gradient(to right, var(--accent-color), var(--secondary-color), var(--accent-color));
+    background: linear-gradient(to right, var(--accent-color-1), var(--accent-color-2), var(--accent-color-3));
     animation: rainbow 5s linear infinite;
 }
 
@@ -674,7 +679,7 @@ footer::before {
     right: 20px;
     width: 40px;
     height: 40px;
-    background-color: var(--accent-color);
+    background-color: var(--accent-color-2);
     color: var(--secondary-color);
     border-radius: 50%;
     text-align: center;
@@ -693,10 +698,9 @@ footer::before {
 }
 
 .scroll-to-top:hover {
-    background-color: var(--primary-color);
+    background-color: var(--hover-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 @keyframes fadeIn {
     from {
@@ -770,7 +774,7 @@ html {
 .skill-bar {
     width: 0;
     height: 5px;
-    background-color: var(--accent-color);
+    background-color: var(--accent-color-3);
     transition: width 1s ease-out;
 }
 
@@ -785,7 +789,7 @@ section.visible .skill-bar {
 
 .parallax-content h2 {
     overflow: hidden;
-    border-right: .15em solid var(--accent-color);
+    border-right: .15em solid var(--accent-color-2);
     margin: 0 auto;
     animation:
             typing 3.5s steps(40, end),
@@ -794,11 +798,11 @@ section.visible .skill-bar {
 
 @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: var(--accent-color); }
+    50% { border-color: var(--accent-color-2); }
 }
 
 body {
-    background: linear-gradient(270deg, #f8f8f8, #ffffff, #f0f0f0);
+    background: linear-gradient(270deg, var(--secondary-color), var(--background-color), #bdc3c7);
     background-size: 600% 600%;
     animation: gradientShift 30s ease infinite;
 }
