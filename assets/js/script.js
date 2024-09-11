@@ -88,10 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 100) {
-            scrollToTopBtn.style.display = 'block';
+        if (window.pageYOffset > 100) { // You can adjust this value
+            scrollToTopBtn.classList.add('visible'); // Change: add class to show button
         } else {
-            scrollToTopBtn.style.display = 'none';
+            scrollToTopBtn.classList.remove('visible'); // Change: remove class to hide button
         }
     });
 
@@ -114,3 +114,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         animateOnScroll.observe(el);
     });
 });
+
+
+
