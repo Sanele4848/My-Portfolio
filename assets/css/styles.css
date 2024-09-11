@@ -220,7 +220,7 @@ nav ul li a:hover::before {
     text-align: center;
     color: var(--secondary-color);
     background-color: rgba(26, 26, 26, 0.7);
-    padding: 20px; /* Adjusted for smaller screens */
+    padding: 20px;
     border-radius: 3px;
     backdrop-filter: blur(5px);
     position: relative;
@@ -230,7 +230,7 @@ nav ul li a:hover::before {
     box-sizing: border-box;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    overflow: auto; /* Ensures overflow content is handled */
+    overflow: auto;
 }
 
 
