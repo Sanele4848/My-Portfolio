@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanele Mabuza | Full-Stack & ML Developer</title>
+    <title>Sanele Mabuza | BICT, Cybersecurity & AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
         body.overlay-open {
-            overflow: hidden; /* Prevent background scroll when any overlay is open */
+            overflow: hidden;
         }
 
         /* --- Global --- */
@@ -83,7 +83,7 @@
         .nav-logo {
             font-size: 1.25rem;
             font-weight: 800;
-            tracking-widest: 0.1em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             text-decoration: none;
             color: var(--fg);
@@ -141,7 +141,7 @@
 
         /* Mobile Menu Button */
         .mobile-menu-button {
-            display: none; /* Hidden by default */
+            display: none;
             font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -155,7 +155,7 @@
 
         /* --- Hero --- */
         .hero {
-            padding-top: 80px; /* Nav height */
+            padding-top: 80px;
             height: 100vh;
             min-height: 700px;
             display: flex;
@@ -163,13 +163,12 @@
             justify-content: center;
             background-color: var(--ui-gray);
         }
-        /* --- MODIFICATION: Added padding to the container *inside* hero --- */
         .hero .container {
             padding-left: 24px;
             padding-right: 24px;
         }
         .hero-title {
-            font-size: clamp(3.5rem, 10vw, 9rem);
+            font-size: clamp(3.5rem, 9vw, 9rem);
             font-weight: 200;
             line-height: 1.0;
             letter-spacing: -0.04em;
@@ -182,7 +181,8 @@
             font-size: 1.25rem;
             font-weight: 400;
             color: var(--mid);
-            max-width: 600px;
+            max-width: 700px;
+            line-height: 1.6;
         }
 
         /* --- Featured Project --- */
@@ -216,12 +216,14 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 24px;
+            line-height: 1.1;
         }
         .featured-project-description {
             font-size: 1.1rem;
             line-height: 1.7;
-            color: var(--subtext);
+            color: var(--fg); /* Slightly darker for readability */
             margin-bottom: 32px;
+            opacity: 0.8;
         }
         .featured-project-tech {
             display: flex;
@@ -326,7 +328,7 @@
 
         /* --- Certifications Section --- */
         .certifications-section {
-            background-color: var(--bg); /* White background */
+            background-color: var(--bg);
         }
         .certifications-grid {
             display: grid;
@@ -478,17 +480,17 @@
             font-family: 'Manrope', sans-serif;
         }
 
-        /* --- Two-Column Overlay Layout --- */
+        /* Two-Column Overlay Layout */
         .contact-overlay-grid {
             max-width: 1000px;
             margin: 80px auto;
             padding: 0 32px;
             display: grid;
-            grid-template-columns: 3fr 2fr; /* 60/40 split */
+            grid-template-columns: 3fr 2fr;
             gap: 80px;
         }
 
-        /* --- Form Styles --- */
+        /* Form Styles */
         .form-label {
             font-size: 0.75rem;
             font-weight: 600;
@@ -533,7 +535,7 @@
             opacity: 0.8;
         }
 
-        /* --- Contact Details Styles --- */
+        /* Contact Details Styles */
         .contact-details-wrapper h4 {
             font-size: 1.5rem;
             font-weight: 700;
@@ -569,13 +571,13 @@
             border-bottom-color: var(--fg);
         }
 
-        /* --- Mobile Menu Overlay --- */
+        /* Mobile Menu Overlay */
         .mobile-overlay-nav {
             padding: 40px 0;
         }
         .mobile-nav-link {
             font-family: 'Manrope', sans-serif;
-            font-weight: 200; /* Light for elegance */
+            font-weight: 200;
             font-size: 3rem;
             line-height: 1.4;
             letter-spacing: -0.02em;
@@ -588,8 +590,7 @@
         .mobile-nav-link:hover {
             color: var(--fg);
         }
-
-        /* --- NEW: Mobile Overlay Tools --- */
+        
         .mobile-overlay-tools {
             margin-top: 40px;
             padding-top: 24px;
@@ -607,11 +608,10 @@
             color: var(--mid);
         }
         #theme-toggle-mobile {
-            display: none; /* Hide by default */
+            display: none;
         }
 
-
-        /* --- Notification --- */
+        /* Notification */
         .notification {
             position: fixed;
             top: 100px;
@@ -629,19 +629,17 @@
             transform: translateX(0);
         }
 
-        /* --- Horizontal Scroll Wrapper --- */
+        /* Horizontal Scroll Wrapper */
         .horizontal-scroll-wrapper {
             overflow-x: auto;
-            /* Hide scrollbar */
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
         .horizontal-scroll-wrapper::-webkit-scrollbar {
-            display: none; /* Chrome, Safari */
+            display: none;
         }
 
-
-        /* --- Responsive --- */
+        /* Responsive */
         @media (max-width: 992px) {
             .featured-project-grid {
                 grid-template-columns: 1fr;
@@ -650,11 +648,11 @@
                 order: -1;
             }
             .projects-grid {
-                grid-template-columns: 1fr 1fr; /* Keep 2 columns on tablet */
+                grid-template-columns: 1fr 1fr;
             }
             .expertise-grid, .certifications-grid {
                 grid-template-columns: 1fr;
-                gap: 40px; /* Reduced gap */
+                gap: 40px;
             }
             .expertise-categories, .certifications-list {
                 grid-template-columns: 1fr 1fr;
@@ -666,94 +664,31 @@
         }
 
         @media (max-width: 768px) {
-            /* --- FIXED: Mobile Container Padding --- */
-            .container {
-                padding: 0; /* Full-bleed by default */
+            .container { padding: 0; }
+            .padded-mobile { padding-left: 24px; padding-right: 24px; }
+            .header .container, .overlay-header .container, .contact-overlay-grid.container, .hero .container {
+                padding-left: 24px; padding-right: 24px;
             }
-            .padded-mobile {
-                padding-left: 24px;
-                padding-right: 24px;
-            }
-            /* Keep header padding */
-            .header .container,
-            .overlay-header .container,
-            .contact-overlay-grid.container {
-                padding-left: 24px;
-                padding-right: 24px;
-            }
-
-            /* --- MODIFICATION: Apply mobile padding to hero container --- */
-            .hero .container {
-                padding-left: 24px;
-                padding-right: 24px;
-            }
-
-            /* --- FIXED: Mobile Menu --- */
-            .nav-menu {
-                display: none;
-            }
-            /* --- FIXED: Hide desktop theme toggle --- */
-            #theme-toggle-desktop {
-                display: none;
-            }
-            .mobile-menu-button {
-                display: block;
-            }
-
-            .hero-title {
-                font-size: 14vw;
-            }
-            .featured-project-title {
-                font-size: 2rem;
-            }
-
-            /* --- CREATIVE: Horizontal Scroll --- */
-            .horizontal-scroll-wrapper {
-                overflow-x: auto;
-            }
-            .projects-grid,
-            .expertise-categories,
-            .certifications-list {
+            .nav-menu, #theme-toggle-desktop { display: none; }
+            .mobile-menu-button { display: block; }
+            .hero-title { font-size: 14vw; }
+            .featured-project-title { font-size: 2rem; }
+            .projects-grid, .expertise-categories, .certifications-list {
                 display: grid;
                 grid-auto-flow: column;
-                grid-auto-columns: 80vw; /* Each card is 80% of screen */
+                grid-auto-columns: 80vw;
                 gap: 20px;
                 padding-bottom: 20px;
-                /* FIXED: This is the correct padding */
-                padding-left: 24px;
-                padding-right: 24px;
+                padding-left: 24px; padding-right: 24px;
+                grid-template-columns: unset;
             }
-            .project-card, .expertise-category, .cert-item {
-                width: 100%; /* Fill the 80vw column */
-            }
-            .projects-grid {
-                grid-template-columns: unset; /* Override desktop */
-            }
-            .expertise-categories, .certifications-list {
-                grid-template-columns: unset; /* Override desktop */
-            }
-
-            .contact-title {
-                font-size: 2.5rem;
-            }
-            .footer-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-            .contact-overlay-grid {
-                margin: 40px auto;
-                gap: 40px;
-            }
-            .mobile-nav-link {
-                font-size: 2.5rem;
-            }
-            /* --- FIXED: Show mobile theme toggle --- */
-            #theme-toggle-mobile {
-                display: block;
-            }
-            .mobile-overlay-label {
-                font-size: 2.5rem;
-            }
+            .project-card, .expertise-category, .cert-item { width: 100%; }
+            .contact-title { font-size: 2.5rem; }
+            .footer-container { flex-direction: column; gap: 20px; }
+            .contact-overlay-grid { margin: 40px auto; gap: 40px; }
+            .mobile-nav-link { font-size: 2.5rem; }
+            #theme-toggle-mobile { display: block; }
+            .mobile-overlay-label { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -770,13 +705,11 @@
                 <a href="#certifications" class="nav-link">Certs</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <!-- **** MODIFIED: Added js-theme-toggle class and new ID **** -->
             <div class="theme-toggle js-theme-toggle" id="theme-toggle-desktop">
                 <div class="theme-toggle-dot"></div>
             </div>
             <button class="mobile-menu-button" id="mobile-menu-button">Menu</button>
         </div>
-
     </div>
 </header>
 
@@ -794,29 +727,25 @@
             <a href="#certifications" class="mobile-nav-link">Certifications</a>
             <a href="#contact" class="mobile-nav-link">Contact</a>
         </nav>
-
-        <!-- **** NEW: Theme toggle section for mobile **** -->
         <div class="mobile-overlay-tools">
             <span class="mobile-overlay-label">Theme</span>
             <div class="theme-toggle js-theme-toggle" id="theme-toggle-mobile">
                 <div class="theme-toggle-dot"></div>
             </div>
         </div>
-
     </div>
 </div>
 
 <main>
 
     <section class="hero">
-        <!-- **** MODIFIED: Container is now inside, with padding applied in CSS **** -->
         <div class="container">
             <h1 class="hero-title">
-                <strong>Full-Stack</strong> Developer<br>
-                & <strong>ML</strong> Practitioner.
+                <strong>Cybersecurity</strong> <br>
+                & <strong>Data</strong> Analyst.
             </h1>
             <p class="hero-subtitle">
-                Final-year BICT student at the University of Mpumalanga, building elegant, high-performance applications.
+                A disciplined and analytical Bachelor of ICT Final Year student. Specialized in Cybersecurity, AI, and digital forensics, with a focus on compliance and operational risk reduction.
             </p>
         </div>
     </section>
@@ -825,20 +754,20 @@
         <div class="container padded-mobile">
             <div class="featured-project-grid">
                 <div class="featured-project-content">
-                    <div class="featured-project-label">Final Year Project</div>
-                    <h2 class="featured-project-title">UMP Psychology System</h2>
+                    <div class="featured-project-label">Quantitative Risk Assessment</div>
+                    <h2 class="featured-project-title">Imbokodo Bank Project</h2>
                     <p class="featured-project-description">
-                        An online mental health platform for the University of Mpumalanga. Features secure appointment booking, student-psychologist matching, and confidential messaging.
+                        Led a strategic risk assessment on critical banking assets including Customer Data and Payments. Utilized Monte Carlo simulations to model threat scenarios, achieving a <strong>568% Return on Security Investment (ROSI)</strong> and proposing controls to reduce annual risk exposure by 91.5% (R24.9 million savings).
                     </p>
                     <div class="featured-project-tech">
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Security</span>
-                        <span class="tech-tag">CRUD</span>
+                        <span class="tech-tag">Monte Carlo</span>
+                        <span class="tech-tag">SARB Directive</span>
+                        <span class="tech-tag">POPIA</span>
+                        <span class="tech-tag">Risk Analysis</span>
                     </div>
                 </div>
                 <div class="featured-project-image">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14261e80e397?fit=crop&w=1000&q=80" alt="Code on a laptop screen">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?fit=crop&w=1000&q=80" alt="Data Analytics Dashboard">
                 </div>
             </div>
         </div>
@@ -854,31 +783,31 @@
 
                     <a href="#" class="project-card">
                         <div class="project-card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1560493374-051d3e2b4153?fit=crop&w=800&q=80" alt="Flight data on a screen" class="project-card-image">
+                            <img src="https://images.unsplash.com/photo-1576091160550-217358c7e618?fit=crop&w=800&q=80" alt="Medical data on screen" class="project-card-image">
+                        </div>
+                        <div class="project-card-info padded-mobile">
+                            <h3 class="project-card-title">Psychology Consultation System</h3>
+                            <p class="project-card-category">PHP / MySQL / Security (79% Mark)</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="project-card">
+                        <div class="project-card-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?fit=crop&w=800&q=80" alt="Airplane wing" class="project-card-image">
                         </div>
                         <div class="project-card-info padded-mobile">
                             <h3 class="project-card-title">Flight Delay Predictor</h3>
-                            <p class="project-card-category">Machine Learning / Python</p>
+                            <p class="project-card-category">Machine Learning / Logistics</p>
                         </div>
                     </a>
 
                     <a href="#" class="project-card">
                         <div class="project-card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?fit=crop&w=800&q=80" alt="E-commerce website on a laptop" class="project-card-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?fit=crop&w=800&q=80" alt="Process mapping" class="project-card-image">
                         </div>
                         <div class="project-card-info padded-mobile">
-                            <h3 class="project-card-title">NextGenGear E-Commerce</h3>
-                            <p class="project-card-category">Frontend / UI/UX</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="project-card">
-                        <div class="project-card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1504639725590-c04ba750f58d?fit=crop&w=800&q=80" alt="Abstract data connections" class="project-card-image">
-                        </div>
-                        <div class="project-card-info padded-mobile">
-                            <h3 class="project-card-title">Ensemble Learning Models</h3>
-                            <p class="project-card-category">Machine Learning / Scikit-learn</p>
+                            <h3 class="project-card-title">Systems & Process Analysis</h3>
+                            <p class="project-card-category">MS Visio / SQL / Reporting</p>
                         </div>
                     </a>
 
@@ -891,38 +820,38 @@
         <div class="container">
             <div class="expertise-grid">
                 <div class="section-header padded-mobile">
-                    <h2 class="section-title">Expertise</h2>
+                    <h2 class="section-title">Specializations</h2>
                     <p style="color: var(--mid); font-size: 1.1rem; line-height: 1.7;">
-                        A selection of my technical skills, focusing on production-ready and academic technologies.
+                        A breakdown of my technical competencies, ranging from forensic analysis to full-stack development.
                     </p>
                 </div>
                 <div class="horizontal-scroll-wrapper">
                     <div class="expertise-categories">
                         <div class="expertise-category">
-                            <h4>Full-Stack</h4>
+                            <h4>Cybersecurity & Cloud</h4>
+                            <ul class="expertise-list">
+                                <li>Cloud Security (AWS)</li>
+                                <li>Secure Protocols</li>
+                                <li>POPIA Compliance</li>
+                                <li>Forensic Mindset</li>
+                            </ul>
+                        </div>
+                        <div class="expertise-category">
+                            <h4>Data Analytics & AI</h4>
+                            <ul class="expertise-list">
+                                <li>Python (Pandas/Scikit-learn)</li>
+                                <li>Predictive Modelling</li>
+                                <li>Monte Carlo Simulations</li>
+                                <li>IBM Data Tools</li>
+                            </ul>
+                        </div>
+                        <div class="expertise-category">
+                            <h4>Development & Systems</h4>
                             <ul class="expertise-list">
                                 <li>PHP & MySQL</li>
-                                <li>HTML5 & CSS3</li>
-                                <li>JavaScript (ES6+)</li>
-                                <li>RESTful APIs</li>
-                            </ul>
-                        </div>
-                        <div class="expertise-category">
-                            <h4>Machine Learning</h4>
-                            <ul class="expertise-list">
-                                <li>Python (Pandas, NumPy)</li>
-                                <li>Scikit-learn</li>
-                                <li>Feature Engineering</li>
-                                <li>Model Evaluation</li>
-                            </ul>
-                        </div>
-                        <div class="expertise-category">
-                            <h4>Tools & Principles</h4>
-                            <ul class="expertise-list">
-                                <li>Git & GitHub</li>
-                                <li>Linux / Shell</li>
-                                <li>Cybersecurity Fundamentals</li>
-                                <li>Database Design</li>
+                                <li>Bootstrap & HTML</li>
+                                <li>MS Visio (Process Mapping)</li>
+                                <li>SQL Management</li>
                             </ul>
                         </div>
                     </div>
@@ -937,37 +866,28 @@
                 <div class="section-header padded-mobile">
                     <h2 class="section-title">Certifications</h2>
                     <p style="color: var(--mid); font-size: 1.1rem; line-height: 1.7;">
-                        A history of professional courses and certifications completed to supplement my academic learning.
+                        Professional development credentials completed to supplement my academic learning.
                     </p>
                 </div>
                 <div class="horizontal-scroll-wrapper">
                     <div class="certifications-list">
 
                         <div class="cert-item">
-                            <h3 class="cert-title">App Academy</h3>
-                            <p class="cert-issuer">FNB • Issued 2024</p>
+                            <h3 class="cert-title">CSN AWS Bootcamp</h3>
+                            <p class="cert-issuer">Cloud Security Network / AWS</p>
+                            <p class="cert-status">Cloud Computing & Secure Data</p>
                         </div>
+
                         <div class="cert-item">
                             <h3 class="cert-title">Data Science 101 & Tools</h3>
-                            <p class="cert-issuer">IBM • Issued 2024</p>
+                            <p class="cert-issuer">IBM</p>
+                            <p class="cert-status">Data Analytics Methodology</p>
                         </div>
+
                         <div class="cert-item">
-                            <h3 class="cert-title">AWS Bootcamp Completion</h3>
-                            <p class="cert-issuer">Amazon Web Services • Issued 2025</p>
-                        </div>
-                        <div class="cert-item">
-                            <h3 class="cert-title">Introduction to Azure</h3>
-                            <p class="cert-issuer">Microsoft • Issued 2025</p>
-                        </div>
-                        <div class="cert-item">
-                            <h3 class="cert-title">Certified in Cybersecurity (CC)</h3>
-                            <p class="cert-issuer">(ISC)²</p>
-                            <p class="cert-status">Scheduled: Dec 2025</p>
-                        </div>
-                        <div class="cert-item">
-                            <h3 class="cert-title">AI Tech Essentials & Practitioner</h3>
-                            <p class="cert-issuer">HCCDA</p>
-                            <p class="cert-status">Scheduled: Nov 2025</p>
+                            <h3 class="cert-title">App Academy Certificate</h3>
+                            <p class="cert-issuer">First National Bank (FNB)</p>
+                            <p class="cert-status">Agile & SDLC</p>
                         </div>
 
                     </div>
@@ -979,10 +899,10 @@
     <section class="section contact-section" id="contact">
         <div class="container contact-container padded-mobile">
             <h2 class="contact-title">
-                Let's <strong>Work Together</strong>
+                Let's <strong>Collaborate</strong>
             </h2>
             <p class="contact-description">
-                I am actively seeking internship and freelance opportunities. If you have a project in mind, I'd be excited to learn how my skills can help.
+                I am available immediately for opportunities in operations, law enforcement, or industrial sectors where I can apply my systems analysis and digital forensics skills.
             </p>
             <button id="contact-button" class="contact-button">
                 Get In Touch
@@ -997,8 +917,8 @@
             © 2025 Sanele Mabuza
         </div>
         <div class="footer-links">
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="footer-link">LinkedIn</a>
-            <a href="https://github.com/yourusername" target="_blank" class="footer-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/sanele-mabuza-a04742225/" target="_blank" class="footer-link">LinkedIn</a>
+            <a href="https://github.com/Sanele4848" target="_blank" class="footer-link">GitHub</a>
         </div>
     </div>
 </footer>
@@ -1032,23 +952,27 @@
         </div>
 
         <div class="contact-details-wrapper">
-            <h4>Other ways to connect</h4>
+            <h4>Connect</h4>
             <ul class="contact-details-list">
                 <li class="contact-details-item">
                     <label>Email</label>
-                    <a href="mailto:sanele.mabuza@example.com">sanele.mabuza@example.com</a>
+                    <a href="mailto:smabuza782@gmail.com">smabuza782@gmail.com</a>
                 </li>
                 <li class="contact-details-item">
                     <label>Phone</label>
-                    <span>+27 71 234 5678</span>
+                    <a href="tel:0784608881">078 460 8881</a>
+                </li>
+                <li class="contact-details-item">
+                    <label>Location</label>
+                    <span>Pietermaritzburg, KwaZulu-Natal</span>
                 </li>
                 <li class="contact-details-item">
                     <label>LinkedIn</label>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
+                    <a href="https://www.linkedin.com/in/sanele-mabuza-a04742225/" target="_blank">View Profile</a>
                 </li>
                 <li class="contact-details-item">
                     <label>GitHub</label>
-                    <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+                    <a href="https://github.com/Sanele4848" target="_blank">Sanele4848</a>
                 </li>
             </ul>
         </div>
@@ -1058,19 +982,15 @@
 
 <div id="notification" class="notification"></div>
 
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // **** MODIFIED: Select all toggles by class ****
         const themeToggles = document.querySelectorAll('.js-theme-toggle');
 
-        // Check for saved theme in localStorage
         const currentTheme = localStorage.getItem('theme');
         if (currentTheme === 'dark') {
             document.body.classList.add('dark-mode');
         }
 
-        // **** MODIFIED: Attach listener to all toggles ****
         themeToggles.forEach(toggle => {
             toggle.addEventListener('click', function () {
                 document.body.classList.toggle('dark-mode');
@@ -1090,19 +1010,16 @@
         const contactForm = document.getElementById('contact-form');
         const notification = document.getElementById('notification');
 
-        // Open overlay
         contactButton.addEventListener('click', () => {
             contactOverlay.classList.add('open');
             document.body.classList.add('overlay-open');
         });
 
-        // Close overlay
         closeContactButton.addEventListener('click', () => {
             contactOverlay.classList.remove('open');
             document.body.classList.remove('overlay-open');
         });
 
-        // Handle form submission
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             contactOverlay.classList.remove('open');
@@ -1117,26 +1034,21 @@
         const closeMobileButton = document.getElementById('close-mobile-button');
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-        // Open mobile menu
         mobileMenuButton.addEventListener('click', () => {
             mobileOverlay.classList.add('open');
             document.body.classList.add('overlay-open');
         });
 
-        // Close mobile menu
         function closeMobileMenu() {
             mobileOverlay.classList.remove('open');
             document.body.classList.remove('overlay-open');
         }
 
         closeMobileButton.addEventListener('click', closeMobileMenu);
-        // Close menu when a link is clicked
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
 
-
-        // Show notification function
         function showNotification(message) {
             notification.textContent = message;
             notification.classList.add('show');
@@ -1151,7 +1063,6 @@
         const scrollThreshold = 10;
 
         window.addEventListener('scroll', () => {
-            // Do not hide header if an overlay is open
             if (document.body.classList.contains('overlay-open')) {
                 return;
             }
@@ -1163,10 +1074,8 @@
             }
 
             if (currentScroll > lastScroll && currentScroll > header.clientHeight) {
-                // Scrolled down
                 header.classList.add('header--hidden');
             } else {
-                // Scrolled up
                 header.classList.remove('header--hidden');
             }
             lastScroll = currentScroll <= 0 ? 0 : currentScroll;
