@@ -3,1086 +3,923 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanele Mabuza | Portfolio</title>
+    <title>Sanele Mabuza</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Google+Sans+Text:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-            --bg: #FFFFFF;
-            --fg: #111111;
-            --mid: #8a8a8a;
-            --ui-gray: #F5F5F5;
-            --border: #EAEAEA;
+            --grey-50: #F8F9FA;
+            --grey-100: #F1F3F4;
+            --grey-200: #E8EAED;
+            --grey-300: #DADCE0;
+            --grey-700: #5F6368;
+            --grey-800: #3C4043;
+            --grey-900: #202124;
+
+            --blue-600: #1A73E8;
+            --blue-50: #E8F0FE;
+
+            --font-brand: 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-ui: 'Google Sans Text', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        body.dark-mode {
-            --bg: #0D0D0D;
-            --fg: #F5F5F5;
-            --mid: #777777;
-            --ui-gray: #1A1A1A;
-            --border: #2A2A2A;
-        }
-
-        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Manrope', sans-serif;
-            background-color: var(--bg);
-            color: var(--fg);
+            font-family: var(--font-ui);
+            font-size: 14px;
+            line-height: 20px;
+            color: var(--grey-900);
+            background: white;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        body.overlay-open {
-            overflow: hidden;
         }
 
-        /* --- Global --- */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        .section {
-            padding: 100px 0;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-        .padded-mobile {
-            padding-left: 24px;
-            padding-right: 24px;
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-        /* --- Header --- */
-        .header {
+        .icon {
+            font-family: 'Material Symbols Outlined';
+            font-size: 20px;
+            font-weight: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            vertical-align: middle;
+        }
+
+        /* NAV - FLOATING PILL */
+        nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 50;
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            height: 80px;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
         }
-        .header--hidden {
-            transform: translateY(-100%);
-        }
-        body.dark-mode .header {
-            background-color: rgba(13, 13, 13, 0.85);
-        }
+
         .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-        }
-        .nav-logo {
-            font-size: 1.25rem;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: var(--fg);
-        }
-        .nav-right-cluster {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--grey-200);
+            border-radius: 100px;
+            padding: 8px 8px 8px 24px;
             display: flex;
             align-items: center;
             gap: 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
-        .nav-menu {
+
+        .logo {
+            font-family: var(--font-brand);
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0;
+            white-space: nowrap;
+        }
+
+        .nav-links {
             display: flex;
-            align-items: center;
-            gap: 32px;
+            gap: 4px;
         }
+
         .nav-link {
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--fg);
-            text-decoration: none;
-            padding-bottom: 4px;
-            border-bottom: 2px solid transparent;
-            transition: color 0.3s, border-color 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            color: var(--grey-700);
+            border-radius: 20px;
+            transition: background-color 0.2s, color 0.2s;
+            white-space: nowrap;
         }
+
         .nav-link:hover {
-            color: var(--mid);
-            border-bottom-color: var(--mid);
+            background: var(--grey-100);
+            color: var(--grey-900);
         }
 
-        /* Theme Toggle */
-        .theme-toggle {
-            width: 40px;
-            height: 20px;
-            background-color: var(--ui-gray);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            cursor: pointer;
-            position: relative;
-        }
-        .theme-toggle-dot {
-            width: 14px;
-            height: 14px;
-            background-color: var(--mid);
-            border-radius: 50%;
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            transition: transform 0.3s;
-        }
-        body.dark-mode .theme-toggle-dot {
-            transform: translateX(20px);
-            background-color: var(--fg);
+        .nav-cta {
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 24px;
+            background: var(--grey-900);
+            color: white;
+            border-radius: 20px;
+            transition: background-color 0.2s;
+            white-space: nowrap;
         }
 
-        /* Mobile Menu Button */
-        .mobile-menu-button {
-            display: none;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--fg);
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-family: 'Manrope', sans-serif;
+        .nav-cta:hover {
+            background: var(--grey-800);
         }
 
-        /* --- Hero --- */
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HERO - MINIMAL CENTERED */
         .hero {
-            padding-top: 80px;
-            height: 100vh;
-            min-height: 700px;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background-color: var(--ui-gray);
-        }
-        .hero .container {
-            padding-left: 24px;
-            padding-right: 24px;
-        }
-        .hero-title {
-            font-size: clamp(3.5rem, 9vw, 9rem);
-            font-weight: 200;
-            line-height: 1.0;
-            letter-spacing: -0.04em;
-            margin-bottom: 24px;
-        }
-        .hero-title strong {
-            font-weight: 800;
-        }
-        .hero-subtitle {
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: var(--mid);
-            max-width: 700px;
-            line-height: 1.6;
+            align-items: center;
+            text-align: center;
+            padding: 120px 0 80px;
         }
 
-        /* --- Featured Project --- */
-        .featured-project {
-            background-color: var(--bg);
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: var(--grey-900);
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 40px;
         }
-        .featured-project-grid {
+
+        .pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #34A853;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.9); }
+        }
+
+        h1 {
+            font-family: var(--font-brand);
+            font-size: 72px;
+            font-weight: 400;
+            line-height: 80px;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+            max-width: 900px;
+        }
+
+        .hero-lead {
+            font-size: 18px;
+            line-height: 28px;
+            color: var(--grey-700);
+            margin-bottom: 48px;
+            max-width: 560px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: var(--blue-600);
+            color: white;
+            border-radius: 28px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: box-shadow 0.2s;
+        }
+
+        .hero-cta:hover {
+            box-shadow: 0 4px 20px rgba(26,115,232,0.4);
+        }
+
+        /* STATS BAR */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--grey-200);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 80px;
+            max-width: 800px;
+        }
+
+        .stat {
+            background: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-brand);
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--grey-700);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-intro {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-eyebrow {
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--blue-600);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: var(--font-brand);
+            font-size: 56px;
+            font-weight: 400;
+            line-height: 64px;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            line-height: 28px;
+            color: var(--grey-700);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* FEATURED - ASYMMETRIC SPLIT */
+        .featured {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
-        }
-        .featured-project-image {
-            background-color: var(--ui-gray);
-            aspect-ratio: 4/3;
-        }
-        .featured-project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .featured-project-label {
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--mid);
-            margin-bottom: 24px;
-        }
-        .featured-project-title {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 24px;
-            line-height: 1.1;
-        }
-        .featured-project-description {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--fg); /* Slightly darker for readability */
-            margin-bottom: 32px;
-            opacity: 0.8;
-        }
-        .featured-project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .tech-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--mid);
-            background-color: var(--ui-gray);
-            padding: 8px 16px;
-        }
-        body.dark-mode .tech-tag {
-            background-color: var(--border);
+            gap: 2px;
+            background: var(--grey-200);
+            border-radius: 28px;
+            overflow: hidden;
         }
 
-        /* --- Other Projects --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .section-header {
-            margin-bottom: 48px;
-        }
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-        }
-        .project-card {
+        .featured-image {
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            min-height: 500px;
             display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            color: var(--fg);
-        }
-        .project-card-image-wrapper {
-            aspect-ratio: 4/3;
-            background-color: var(--ui-gray);
-            overflow: hidden;
+            align-items: center;
+            justify-content: center;
             position: relative;
         }
-        .project-card-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .project-card:hover .project-card-image {
-            transform: scale(1.05);
-        }
-        .project-card-info {
-            padding-top: 20px;
-        }
-        .project-card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-        .project-card-category {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: var(--mid);
-            margin-top: 4px;
+
+        .metric-display {
+            text-align: center;
+            color: white;
         }
 
-        /* --- Expertise Section --- */
-        .expertise-section {
-            background-color: var(--ui-gray);
-        }
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 80px;
-        }
-        .expertise-categories {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 48px;
-        }
-        .expertise-category h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        .metric-icon {
+            font-size: 72px;
+            display: block;
             margin-bottom: 24px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--border);
+            opacity: 0.9;
         }
-        .expertise-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+
+        .metric-value {
+            font-family: var(--font-brand);
+            font-size: 64px;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 8px;
         }
-        .expertise-list li {
-            font-size: 1rem;
+
+        .metric-label {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .featured-info {
+            background: white;
+            padding: 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-meta {
+            font-size: 12px;
             font-weight: 500;
-            color: var(--mid);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--blue-600);
+            margin-bottom: 24px;
+        }
+
+        .featured-title {
+            font-family: var(--font-brand);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 44px;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+
+        .featured-desc {
+            font-size: 16px;
+            line-height: 24px;
+            color: var(--grey-700);
+            margin-bottom: 32px;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 8px 16px;
+            background: var(--grey-50);
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--grey-700);
+        }
+
+        /* PROJECTS - MASONRY */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid var(--grey-200);
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.2s;
+        }
+
+        .project-card:hover {
+            border-color: var(--grey-900);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .project-card:first-child {
+            grid-row: span 2;
+        }
+
+        .project-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--grey-900);
+            color: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .project-title {
+            font-family: var(--font-brand);
+            font-size: 24px;
+            font-weight: 500;
             margin-bottom: 12px;
         }
 
-        /* --- Certifications Section --- */
-        .certifications-section {
-            background-color: var(--bg);
-        }
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 80px;
-        }
-        .certifications-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-        }
-        .cert-item {
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--border);
-        }
-        .cert-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--fg);
-        }
-        .cert-issuer {
-            font-size: 0.9rem;
-            color: var(--mid);
-            margin-top: 4px;
-        }
-        .cert-status {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--mid);
-            margin-top: 8px;
-        }
-
-        /* --- Contact --- */
-        .contact-section {
-            background-color: var(--fg);
-            color: var(--bg);
-        }
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .contact-title {
-            font-size: 3.5rem;
-            font-weight: 200;
-            letter-spacing: -0.03em;
+        .project-desc {
+            font-size: 15px;
+            line-height: 22px;
+            color: var(--grey-700);
             margin-bottom: 24px;
         }
-        .contact-title strong {
-            font-weight: 800;
-        }
-        .contact-description {
-            font-size: 1.1rem;
-            color: var(--mid);
-            margin-bottom: 40px;
-        }
-        .contact-button {
-            display: inline-block;
-            background: var(--bg);
-            color: var(--fg);
-            padding: 16px 32px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-family: 'Manrope', sans-serif;
-        }
-        .contact-button:hover {
-            opacity: 0.8;
-        }
 
-        /* --- Footer --- */
-        .footer {
-            padding: 60px 0;
-            background-color: var(--ui-gray);
-            border-top: 1px solid var(--border);
-        }
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .footer-copyright {
-            font-size: 0.8rem;
-            color: var(--mid);
-        }
-        .footer-links {
-            display: flex;
+        /* SKILLS - BENTO GRID */
+        .bento {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 24px;
         }
-        .footer-link {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--mid);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .footer-link:hover {
-            color: var(--fg);
+
+        .bento-item {
+            background: var(--grey-50);
+            border-radius: 28px;
+            padding: 56px;
         }
 
-        /* --- Contact Overlay --- */
-        .overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 100;
-            background-color: var(--bg);
-            transform: translateY(-100%);
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-            overflow-y: auto;
+        .bento-item:nth-child(2) {
+            background: var(--grey-900);
+            color: white;
         }
-        .overlay.open {
-            transform: translateY(0);
+
+        .bento-title {
+            font-family: var(--font-brand);
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 40px;
         }
-        .overlay-header {
-            position: sticky;
-            top: 0;
-            z-index: 1;
-            background-color: var(--bg);
-            height: 80px;
-            border-bottom: 1px solid var(--border);
-        }
-        .overlay-header .container {
+
+        .skill-row {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--grey-200);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100%;
-        }
-        .overlay-title {
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--fg);
-        }
-        .overlay-close-button {
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--fg);
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-family: 'Manrope', sans-serif;
+            font-size: 16px;
         }
 
-        /* Two-Column Overlay Layout */
-        .contact-overlay-grid {
-            max-width: 1000px;
-            margin: 80px auto;
-            padding: 0 32px;
-            display: grid;
-            grid-template-columns: 3fr 2fr;
-            gap: 80px;
+        .bento-item:nth-child(2) .skill-row {
+            border-bottom-color: rgba(255,255,255,0.1);
         }
 
-        /* Form Styles */
-        .form-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--mid);
-            display: block;
-            margin-bottom: 8px;
-        }
-        .form-input {
-            font-family: 'Manrope', sans-serif;
-            font-size: 1rem;
-            color: var(--fg);
-            background-color: var(--ui-gray);
-            border: 1px solid var(--border);
-            padding: 1rem;
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 24px;
-        }
-        .form-input:focus {
-            outline: none;
-            border-color: var(--fg);
-        }
-        .form-textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        .form-button {
-            width: 100%;
-            background: var(--fg);
-            color: var(--bg);
-            padding: 1rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: opacity 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-family: 'Manrope', sans-serif;
-        }
-        .form-button:hover {
-            opacity: 0.8;
+        .skill-row:last-child {
+            border-bottom: none;
         }
 
-        /* Contact Details Styles */
-        .contact-details-wrapper h4 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-        }
-        .contact-details-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .contact-details-item {
-            margin-bottom: 24px;
-        }
-        .contact-details-item label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--mid);
-            display: block;
-            margin-bottom: 4px;
-        }
-        .contact-details-item a,
-        .contact-details-item span {
-            font-size: 1rem;
+        .skill-name {
             font-weight: 500;
-            color: var(--fg);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s;
-        }
-        .contact-details-item a:hover {
-            border-bottom-color: var(--fg);
         }
 
-        /* Mobile Menu Overlay */
-        .mobile-overlay-nav {
+        .cert-issuer {
+            font-size: 13px;
+            color: var(--grey-700);
+            margin-top: 2px;
+        }
+
+        .bento-item:nth-child(2) .cert-issuer {
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* CONTACT - FULL BLEED */
+        .contact-section {
+            background: var(--grey-900);
+            color: white;
+            border-radius: 28px;
+            padding: 120px 80px;
+            text-align: center;
+            margin-bottom: 120px;
+        }
+
+        .contact-title {
+            font-family: var(--font-brand);
+            font-size: 56px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+        }
+
+        .contact-text {
+            font-size: 18px;
+            line-height: 28px;
+            color: rgba(255,255,255,0.7);
+            max-width: 560px;
+            margin: 0 auto 48px;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 36px;
+            background: white;
+            color: var(--grey-900);
+            border-radius: 28px;
+            font-weight: 500;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        .contact-button:hover {
+            transform: scale(1.02);
+        }
+
+        .social-links {
+            margin-top: 48px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            font-size: 15px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
             padding: 40px 0;
-        }
-        .mobile-nav-link {
-            font-family: 'Manrope', sans-serif;
-            font-weight: 200;
-            font-size: 3rem;
-            line-height: 1.4;
-            letter-spacing: -0.02em;
-            color: var(--mid);
-            text-decoration: none;
-            display: block;
-            padding: 8px 0;
-            transition: color 0.3s ease;
-        }
-        .mobile-nav-link:hover {
-            color: var(--fg);
-        }
-        
-        .mobile-overlay-tools {
-            margin-top: 40px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .mobile-overlay-label {
-            font-family: 'Manrope', sans-serif;
-            font-weight: 200;
-            font-size: 3rem;
-            line-height: 1.4;
-            letter-spacing: -0.02em;
-            color: var(--mid);
-        }
-        #theme-toggle-mobile {
-            display: none;
+            text-align: center;
+            font-size: 13px;
+            color: var(--grey-700);
+            border-top: 1px solid var(--grey-200);
         }
 
-        /* Notification */
-        .notification {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            z-index: 200;
-            background: var(--fg);
-            color: var(--bg);
-            padding: 1rem 1.5rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transform: translateX(calc(100% + 20px));
-            transition: transform 0.3s ease;
-        }
-        .notification.show {
-            transform: translateX(0);
-        }
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
 
-        /* Horizontal Scroll Wrapper */
-        .horizontal-scroll-wrapper {
-            overflow-x: auto;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .horizontal-scroll-wrapper::-webkit-scrollbar {
-            display: none;
-        }
+            h1 {
+                font-size: 56px;
+                line-height: 64px;
+            }
 
-        /* Responsive */
-        @media (max-width: 992px) {
-            .featured-project-grid {
+            .section-title {
+                font-size: 44px;
+                line-height: 52px;
+            }
+
+            .featured,
+            .bento {
                 grid-template-columns: 1fr;
             }
-            .featured-project-image {
-                order: -1;
+
+            .featured-image {
+                min-height: 400px;
             }
-            .projects-grid {
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card:first-child {
+                grid-row: span 1;
+            }
+
+            .stats-bar {
                 grid-template-columns: 1fr 1fr;
             }
-            .expertise-grid, .certifications-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
+        }
+
+        @media (max-width: 640px) {
+            nav {
+                top: 0;
+                left: 0;
+                right: 0;
+                transform: none;
+                width: 100%;
             }
-            .expertise-categories, .certifications-list {
-                grid-template-columns: 1fr 1fr;
+
+            .nav-container {
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+                border-top: none;
+                padding: 16px 20px;
+                gap: 16px;
+                box-shadow: none;
             }
-            .contact-overlay-grid {
+
+            .logo {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 0;
+            }
+
+            .hero {
+                min-height: 70vh;
+                padding: 100px 20px 60px;
+            }
+
+            h1 {
+                font-size: 40px;
+                line-height: 48px;
+                letter-spacing: -0.5px;
+            }
+
+            .hero-lead {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .stats-bar {
                 grid-template-columns: 1fr;
-                gap: 60px;
+                border-radius: 0;
+                margin-left: 0;
+                margin-right: 0;
+                max-width: none;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .section-intro {
+                padding: 0 20px;
+            }
+
+            .section-title {
+                font-size: 36px;
+                line-height: 44px;
+            }
+
+            .featured {
+                border-radius: 0;
+            }
+
+            .featured-info,
+            .bento-item {
+                padding: 32px 20px;
+            }
+
+            .projects {
+                padding: 0 20px;
+            }
+
+            .project-card {
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+                padding: 32px 0;
+            }
+
+            .project-card:first-child {
+                border-top: none;
+            }
+
+            .project-card:last-child {
+                border-bottom: none;
+            }
+
+            .bento {
+                padding: 0 20px;
+            }
+
+            .bento-item {
+                border-radius: 0;
+            }
+
+            .contact-section {
+                padding: 60px 20px;
+                border-radius: 0;
+                margin-bottom: 0;
+            }
+
+            .contact-title {
+                font-size: 40px;
+                line-height: 48px;
+            }
+
+            footer {
+                padding: 40px 20px;
+                border-top: none;
             }
         }
 
-        @media (max-width: 768px) {
-            .container { padding: 0; }
-            .padded-mobile { padding-left: 24px; padding-right: 24px; }
-            .header .container, .overlay-header .container, .contact-overlay-grid.container, .hero .container {
-                padding-left: 24px; padding-right: 24px;
-            }
-            .nav-menu, #theme-toggle-desktop { display: none; }
-            .mobile-menu-button { display: block; }
-            .hero-title { font-size: 14vw; }
-            .featured-project-title { font-size: 2rem; }
-            .projects-grid, .expertise-categories, .certifications-list {
-                display: grid;
-                grid-auto-flow: column;
-                grid-auto-columns: 80vw;
-                gap: 20px;
-                padding-bottom: 20px;
-                padding-left: 24px; padding-right: 24px;
-                grid-template-columns: unset;
-            }
-            .project-card, .expertise-category, .cert-item { width: 100%; }
-            .contact-title { font-size: 2.5rem; }
-            .footer-container { flex-direction: column; gap: 20px; }
-            .contact-overlay-grid { margin: 40px auto; gap: 40px; }
-            .mobile-nav-link { font-size: 2.5rem; }
-            #theme-toggle-mobile { display: block; }
-            .mobile-overlay-label { font-size: 2.5rem; }
-        }
     </style>
 </head>
 <body>
 
-<header class="header" id="main-header">
-    <div class="container nav-container">
-        <a href="#" class="nav-logo">Sanele Mabuza</a>
-
-        <div class="nav-right-cluster">
-            <div class="nav-menu">
-                <a href="#work" class="nav-link">Work</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#certifications" class="nav-link">Certs</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="theme-toggle js-theme-toggle" id="theme-toggle-desktop">
-                <div class="theme-toggle-dot"></div>
-            </div>
-            <button class="mobile-menu-button" id="mobile-menu-button">Menu</button>
+<nav>
+    <div class="nav-container">
+        <div class="logo">Sanele Mabuza</div>
+        <div class="nav-links">
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#about" class="nav-link">Skills</a>
         </div>
+        <a href="#contact" class="nav-cta">Contact</a>
     </div>
-</header>
+</nav>
 
-<div id="mobile-overlay" class="overlay">
-    <div class="overlay-header">
-        <div class="container">
-            <a href="#" class="nav-logo">Sanele Mabuza</a>
-            <button id="close-mobile-button" class="overlay-close-button">Close</button>
-        </div>
-    </div>
-    <div class="container mobile-overlay-nav padded-mobile">
-        <nav>
-            <a href="#work" class="mobile-nav-link">Work</a>
-            <a href="#skills" class="mobile-nav-link">Skills</a>
-            <a href="#certifications" class="mobile-nav-link">Certifications</a>
-            <a href="#contact" class="mobile-nav-link">Contact</a>
-        </nav>
-        <div class="mobile-overlay-tools">
-            <span class="mobile-overlay-label">Theme</span>
-            <div class="theme-toggle js-theme-toggle" id="theme-toggle-mobile">
-                <div class="theme-toggle-dot"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<main>
+<div class="container">
 
     <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">
-                <strong>Cybersecurity</strong> <br>
-                & <strong>Data</strong> Analytics.
-            </h1>
-            <p class="hero-subtitle">
-                Bachelor of Information and Communication Technology (BICT), University of Mpumalanga. Developing skills in digital forensics, AI, and systems development.
-            </p>
+        <div class="availability">
+            <span class="pulse"></span>
+            Available for opportunities
         </div>
-    </section>
+        <h1>Building secure infrastructure through data science.</h1>
+        <p class="hero-lead">
+            Final-year BICT student at UMP specializing in Digital Forensics, Risk Assessment, and security-driven data analysis.
+        </p>
+        <a href="#work" class="hero-cta">
+            <span>Explore my work</span>
+            <span class="icon">arrow_forward</span>
+        </a>
 
-    <section class="section featured-project" id="work">
-        <div class="container padded-mobile">
-            <div class="featured-project-grid">
-                <div class="featured-project-content">
-                    <div class="featured-project-label">Academic Project</div>
-                    <h2 class="featured-project-title">Imbokodo Bank Assessment</h2>
-                    <p class="featured-project-description">
-                        Conducted a risk assessment simulation for banking assets. Used Monte Carlo simulations to model scenarios, achieving a theoretical 568% Return on Security Investment (ROSI).
-                    </p>
-                    <div class="featured-project-tech">
-                        <span class="tech-tag">Monte Carlo</span>
-                        <span class="tech-tag">SARB Directive</span>
-                        <span class="tech-tag">POPIA</span>
-                        <span class="tech-tag">Risk Analysis</span>
-                    </div>
-                </div>
-                <div class="featured-project-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?fit=crop&w=1000&q=80" alt="Data Analytics Dashboard">
-                </div>
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-value">Cybersecurity</span>
+                <span class="stat-label">Focus Area</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">KZN, SA</span>
+                <span class="stat-label">Location</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">222387688</span>
+                <span class="stat-label">Student ID</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">10+</span>
+                <span class="stat-label">Projects</span>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <div class="section-header padded-mobile">
-                <h2 class="section-title">Other Projects</h2>
-            </div>
-            <div class="horizontal-scroll-wrapper">
-                <div class="projects-grid">
-
-                    <a href="#" class="project-card">
-                        <div class="project-card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1576091160550-217358c7e618?fit=crop&w=800&q=80" alt="Medical data on screen" class="project-card-image">
-                        </div>
-                        <div class="project-card-info padded-mobile">
-                            <h3 class="project-card-title">Psychology Consultation System</h3>
-                            <p class="project-card-category">PHP / MySQL / University Project</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="project-card">
-                        <div class="project-card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?fit=crop&w=800&q=80" alt="Airplane wing" class="project-card-image">
-                        </div>
-                        <div class="project-card-info padded-mobile">
-                            <h3 class="project-card-title">Flight Delay Predictor</h3>
-                            <p class="project-card-category">Machine Learning / Logistics</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="project-card">
-                        <div class="project-card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?fit=crop&w=800&q=80" alt="Process mapping" class="project-card-image">
-                        </div>
-                        <div class="project-card-info padded-mobile">
-                            <h3 class="project-card-title">Systems & Process Analysis</h3>
-                            <p class="project-card-category">MS Visio / SQL / Reporting</p>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section expertise-section" id="skills">
-        <div class="container">
-            <div class="expertise-grid">
-                <div class="section-header padded-mobile">
-                    <h2 class="section-title">Technical Skills</h2>
-                    <p style="color: var(--mid); font-size: 1.1rem; line-height: 1.7;">
-                        A list of tools and technologies I have worked with during my coursework.
-                    </p>
-                </div>
-                <div class="horizontal-scroll-wrapper">
-                    <div class="expertise-categories">
-                        <div class="expertise-category">
-                            <h4>Cybersecurity</h4>
-                            <ul class="expertise-list">
-                                <li>Cloud Security Basics (AWS)</li>
-                                <li>Secure Protocols</li>
-                                <li>POPIA Understanding</li>
-                                <li>Forensic Concepts</li>
-                            </ul>
-                        </div>
-                        <div class="expertise-category">
-                            <h4>Data & AI</h4>
-                            <ul class="expertise-list">
-                                <li>Python (Pandas/Scikit-learn)</li>
-                                <li>Predictive Modelling</li>
-                                <li>Monte Carlo Simulations</li>
-                                <li>IBM Data Tools</li>
-                            </ul>
-                        </div>
-                        <div class="expertise-category">
-                            <h4>Development</h4>
-                            <ul class="expertise-list">
-                                <li>PHP & MySQL</li>
-                                <li>Bootstrap & HTML</li>
-                                <li>MS Visio (Process Mapping)</li>
-                                <li>SQL Management</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section certifications-section" id="certifications">
-        <div class="container">
-            <div class="certifications-grid">
-                <div class="section-header padded-mobile">
-                    <h2 class="section-title">Certifications</h2>
-                    <p style="color: var(--mid); font-size: 1.1rem; line-height: 1.7;">
-                        Additional courses completed to supplement my studies.
-                    </p>
-                </div>
-                <div class="horizontal-scroll-wrapper">
-                    <div class="certifications-list">
-
-                        <div class="cert-item">
-                            <h3 class="cert-title">CSN AWS Bootcamp</h3>
-                            <p class="cert-issuer">Cloud Security Network / AWS</p>
-                            <p class="cert-status">Cloud Computing Basics</p>
-                        </div>
-
-                        <div class="cert-item">
-                            <h3 class="cert-title">Data Science 101 & Tools</h3>
-                            <p class="cert-issuer">IBM</p>
-                            <p class="cert-status">Analytics Methodology</p>
-                        </div>
-
-                        <div class="cert-item">
-                            <h3 class="cert-title">App Academy Certificate</h3>
-                            <p class="cert-issuer">First National Bank (FNB)</p>
-                            <p class="cert-status">Agile & SDLC</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section contact-section" id="contact">
-        <div class="container contact-container padded-mobile">
-            <h2 class="contact-title">
-                Let's <strong>Connect</strong>
-            </h2>
-            <p class="contact-description">
-                I am looking for entry-level opportunities to apply my skills in operations or analysis.
-            </p>
-            <button id="contact-button" class="contact-button">
-                Get In Touch
-            </button>
-        </div>
-    </section>
-</main>
-
-<footer class="footer">
-    <div class="container footer-container padded-mobile">
-        <div class="footer-copyright">
-            © 2025 Sanele Mabuza
-        </div>
-        <div class="footer-links">
-            <a href="https://www.linkedin.com/in/sanele-mabuza-a04742225/" target="_blank" class="footer-link">LinkedIn</a>
-            <a href="https://github.com/Sanele4848" target="_blank" class="footer-link">GitHub</a>
-        </div>
-    </div>
-</footer>
-
-<div id="contact-overlay" class="overlay">
-    <div class="overlay-header">
-        <div class="container">
-            <span class="overlay-title">Contact Me</span>
-            <button id="close-contact-button" class="overlay-close-button">Close</button>
-        </div>
-    </div>
-
-    <div class="contact-overlay-grid container">
-
-        <div class="contact-form-wrapper">
-            <form id="contact-form">
-                <div>
-                    <label for="name" class="form-label">Full Name</label>
-                    <input type="text" id="name" name="name" class="form-input" required>
-                </div>
-                <div>
-                    <label for="email" class="form-label">Email Address</label>
-                    <input type="email" id="email" name="email" class="form-input" required>
-                </div>
-                <div>
-                    <label for="message" class="form-label">Message</label>
-                    <textarea id="message" name="message" class="form-input form-textarea" required></textarea>
-                </div>
-                <button type="submit" class="form-button">Send Message</button>
-            </form>
-        </div>
-
-        <div class="contact-details-wrapper">
-            <h4>Connect</h4>
-            <ul class="contact-details-list">
-                <li class="contact-details-item">
-                    <label>Email</label>
-                    <a href="mailto:smabuza782@gmail.com">smabuza782@gmail.com</a>
-                </li>
-                <li class="contact-details-item">
-                    <label>Phone</label>
-                    <a href="tel:0784608881">078 460 8881</a>
-                </li>
-                <li class="contact-details-item">
-                    <label>Location</label>
-                    <span>Pietermaritzburg, KwaZulu-Natal</span>
-                </li>
-                <li class="contact-details-item">
-                    <label>LinkedIn</label>
-                    <a href="https://www.linkedin.com/in/sanele-mabuza-a04742225/" target="_blank">View Profile</a>
-                </li>
-                <li class="contact-details-item">
-                    <label>GitHub</label>
-                    <a href="https://github.com/Sanele4848" target="_blank">Sanele4848</a>
-                </li>
-            </ul>
-        </div>
-
-    </div>
 </div>
 
-<div id="notification" class="notification"></div>
+<section id="work" class="section">
+    <div class="container">
+        <div class="section-intro">
+            <div class="section-eyebrow">Featured Work</div>
+            <h2 class="section-title">Case study</h2>
+            <p class="section-subtitle">
+                A comprehensive risk assessment model for the financial sector, demonstrating security ROI through probabilistic modeling.
+            </p>
+        </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const themeToggles = document.querySelectorAll('.js-theme-toggle');
+        <div class="featured">
+            <div class="featured-image">
+                <div class="metric-display">
+                    <span class="icon metric-icon">analytics</span>
+                    <div class="metric-value">+568%</div>
+                    <div class="metric-label">Projected ROSI</div>
+                </div>
+            </div>
+            <div class="featured-info">
+                <div class="project-meta">Risk Assessment Model · 2025</div>
+                <h3 class="featured-title">Imbokodo Bank Risk Assessment</h3>
+                <p class="featured-desc">
+                    Built a Monte Carlo simulation framework to model threat scenarios against defensive spending, calculating theoretical Return on Security Investment while ensuring SARB compliance.
+                </p>
+                <div class="tag-list">
+                    <span class="tag">Python</span>
+                    <span class="tag">Monte Carlo</span>
+                    <span class="tag">SARB Compliance</span>
+                    <span class="tag">Data Visualization</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-        }
+<section class="section">
+    <div class="container">
+        <div class="section-intro">
+            <div class="section-eyebrow">Portfolio</div>
+            <h2 class="section-title">Selected projects</h2>
+        </div>
 
-        themeToggles.forEach(toggle => {
-            toggle.addEventListener('click', function () {
-                document.body.classList.toggle('dark-mode');
+        <div class="projects">
+            <div class="project-card">
+                <div class="project-icon">
+                    <span class="icon">flight</span>
+                </div>
+                <h3 class="project-title">Flight Delay Predictor</h3>
+                <p class="project-desc">
+                    Trained ML models on historical weather and flight data to predict logistics delays. Achieved 87% accuracy using ensemble methods and feature engineering.
+                </p>
+                <div class="tag-list">
+                    <span class="tag">Scikit-Learn</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">XGBoost</span>
+                </div>
+            </div>
 
-                let theme = 'light';
-                if (document.body.classList.contains('dark-mode')) {
-                    theme = 'dark';
-                }
-                localStorage.setItem('theme', theme);
-            });
-        });
+            <div class="project-card">
+                <div class="project-icon">
+                    <span class="icon">lock</span>
+                </div>
+                <h3 class="project-title">Psychology System</h3>
+                <p class="project-desc">
+                    Secure patient management system with AES-256 encryption and role-based access control for UMP's psychology department.
+                </p>
+                <div class="tag-list">
+                    <span class="tag">PHP</span>
+                    <span class="tag">MySQL</span>
+                </div>
+            </div>
 
-        // --- Contact Overlay Logic ---
-        const contactButton = document.getElementById('contact-button');
-        const contactOverlay = document.getElementById('contact-overlay');
-        const closeContactButton = document.getElementById('close-contact-button');
-        const contactForm = document.getElementById('contact-form');
-        const notification = document.getElementById('notification');
+            <div class="project-card">
+                <div class="project-icon">
+                    <span class="icon">memory</span>
+                </div>
+                <h3 class="project-title">Hardware Operations</h3>
+                <p class="project-desc">
+                    Independent business sourcing, diagnosing, repairing, and upgrading computing hardware for retail resale.
+                </p>
+                <div class="tag-list">
+                    <span class="tag">Diagnostics</span>
+                    <span class="tag">Sales</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        contactButton.addEventListener('click', () => {
-            contactOverlay.classList.add('open');
-            document.body.classList.add('overlay-open');
-        });
+<section id="about" class="section">
+    <div class="container">
+        <div class="section-intro">
+            <div class="section-eyebrow">Expertise</div>
+            <h2 class="section-title">Skills & credentials</h2>
+        </div>
 
-        closeContactButton.addEventListener('click', () => {
-            contactOverlay.classList.remove('open');
-            document.body.classList.remove('overlay-open');
-        });
+        <div class="bento">
 
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            contactOverlay.classList.remove('open');
-            document.body.classList.remove('overlay-open');
-            showNotification('Message Sent! I will get back to you shortly.');
-            contactForm.reset();
-        });
+            <div class="bento-item">
+                <h3 class="bento-title">Technical Skills</h3>
+                <div>
+                    <div class="skill-row">
+                        <span class="skill-name">AWS Cloud Security</span>
+                        <span class="icon" style="color: #34A853;">check_circle</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Threat Modeling & Analysis</span>
+                        <span class="icon" style="color: #34A853;">check_circle</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">POPIA Compliance</span>
+                        <span class="icon" style="color: #34A853;">check_circle</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Digital Forensics</span>
+                        <span class="icon" style="color: #34A853;">check_circle</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-name">Python (Pandas/NumPy/Scikit)</span>
+                        <span class="icon" style="color: #34A853;">check_circle</span>
+                    </div>
+                </div>
+            </div>
 
-        // --- Mobile Menu Overlay Logic ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileOverlay = document.getElementById('mobile-overlay');
-        const closeMobileButton = document.getElementById('close-mobile-button');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            <div class="bento-item">
+                <h3 class="bento-title">Certifications</h3>
+                <div>
+                    <div class="skill-row">
+                        <div>
+                            <div class="skill-name">AWS Bootcamp</div>
+                            <div class="cert-issuer">Cloud Security Network</div>
+                        </div>
+                    </div>
+                    <div class="skill-row">
+                        <div>
+                            <div class="skill-name">Data Science 101</div>
+                            <div class="cert-issuer">IBM</div>
+                        </div>
+                    </div>
+                    <div class="skill-row">
+                        <div>
+                            <div class="skill-name">App Academy</div>
+                            <div class="cert-issuer">FNB (Agile/SDLC)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileOverlay.classList.add('open');
-            document.body.classList.add('overlay-open');
-        });
+        </div>
+    </div>
+</section>
 
-        function closeMobileMenu() {
-            mobileOverlay.classList.remove('open');
-            document.body.classList.remove('overlay-open');
-        }
+<div class="container">
+    <section id="contact" class="contact-section">
+        <h2 class="contact-title">Let's connect.</h2>
+        <p class="contact-text">
+            Currently seeking entry-level opportunities in Cybersecurity operations, Risk Assessment, or Data Analysis. Open to discussing how my skills can contribute to your team.
+        </p>
+        <a href="mailto:smabuza782@gmail.com" class="contact-button">
+            <span class="icon">mail</span>
+            <span>smabuza782@gmail.com</span>
+        </a>
+        <div class="social-links">
+            <a href="https://linkedin.com">LinkedIn</a>
+            <a href="https://github.com/Sanele4848">GitHub</a>
+        </div>
+    </section>
 
-        closeMobileButton.addEventListener('click', closeMobileMenu);
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-
-        function showNotification(message) {
-            notification.textContent = message;
-            notification.classList.add('show');
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
-        }
-
-        // --- Header Hide/Show on Scroll ---
-        const header = document.getElementById('main-header');
-        let lastScroll = 0;
-        const scrollThreshold = 10;
-
-        window.addEventListener('scroll', () => {
-            if (document.body.classList.contains('overlay-open')) {
-                return;
-            }
-
-            const currentScroll = window.pageYOffset;
-
-            if (Math.abs(currentScroll - lastScroll) < scrollThreshold) {
-                return;
-            }
-
-            if (currentScroll > lastScroll && currentScroll > header.clientHeight) {
-                header.classList.add('header--hidden');
-            } else {
-                header.classList.remove('header--hidden');
-            }
-            lastScroll = currentScroll <= 0 ? 0 : currentScroll;
-        });
-
-    });
-</script>
+    <footer>
+        © 2025 Sanele Mabuza · Built with intention
+    </footer>
+</div>
 
 </body>
 </html>
