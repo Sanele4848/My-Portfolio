@@ -1,6 +1,6 @@
-# Modern and Interactive Developer Portfolio
+# This is my Modern and Interactive Developer Portfolio
 
-This is a template for a modern, single-page developer portfolio website built with HTML, CSS, and JavaScript. It is designed to be visually appealing, interactive, and easy to customize. The design is clean, professional, and includes a dark mode.
+This is my template for a modern, single-page developer portfolio website built with HTML, CSS, and JavaScript. It is designed to be visually appealing, interactive, and easy to customize. The design is clean, professional, and includes a dark mode.
 
 -----
 
