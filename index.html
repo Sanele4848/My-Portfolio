@@ -2,400 +2,272 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Sanele Mabuza, ICT graduate focused on systems administration, infrastructure, data and ML engineering, and cybersecurity.">
+<meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <title>Sanele Mabuza — ICT Graduate</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --white: #ffffff;
-  --off: #F7F7F5;
-  --border: #E8E8E4;
-  --border-dark: #D0D0C8;
-  --text: #1A1A1A;
-  --text-mid: #555550;
-  --text-light: #888882;
-  --green: #2D7D4F;
-  --sans: 'Inter', system-ui, sans-serif;
-  --serif: 'Lora', Georgia, serif;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--sans);
-  background: var(--white);
-  color: var(--text);
-  font-size: 15px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-a { text-decoration: none; color: inherit; }
-
-/* NAV */
-nav {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-  padding: 0 48px; height: 60px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-name { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; }
-.nav-links { display: flex; gap: 32px; align-items: center; }
-.nav-links a { font-size: 13px; color: var(--text-mid); transition: color 0.15s; }
-.nav-links a:hover { color: var(--text); }
-.nav-hire {
-  font-size: 13px !important; font-weight: 500 !important;
-  padding: 7px 16px; background: var(--text); color: white !important;
-  border-radius: 6px; transition: opacity 0.15s !important;
-}
-.nav-hire:hover { opacity: 0.85; }
-
-/* LAYOUT */
-.page { max-width: 960px; margin: 0 auto; padding: 0 48px; }
-
-/* HERO */
-.hero { padding: 80px 0 72px; border-bottom: 1px solid var(--border); }
-
-.hero-available {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-size: 12px; font-weight: 500; color: var(--green);
-  background: #F0FAF4; border: 1px solid #C3E6D2;
-  padding: 4px 12px; border-radius: 20px; margin-bottom: 32px;
-}
-.hero-available span { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
-
-.hero h1 {
-  font-family: var(--serif);
-  font-size: clamp(36px, 5vw, 52px);
-  font-weight: 400; line-height: 1.15;
-  letter-spacing: -0.02em; margin-bottom: 20px; max-width: 680px;
-}
-.hero-sub {
-  font-size: 16px; line-height: 1.65; color: var(--text-mid);
-  max-width: 560px; margin-bottom: 36px; font-weight: 300;
-}
-.hero-contact { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
-.hero-contact a { font-size: 13px; font-weight: 500; color: var(--text-mid); display: flex; align-items: center; gap: 6px; transition: color 0.15s; }
-.hero-contact a:hover { color: var(--text); }
-.hero-contact .sep { color: var(--border-dark); }
-
-/* STATS */
-.stats-row {
-  display: flex; gap: 0;
-  border: 1px solid var(--border); border-radius: 10px;
-  overflow: hidden; margin: 48px 0 0;
-}
-.stat { flex: 1; padding: 24px 28px; border-right: 1px solid var(--border); }
-.stat:last-child { border-right: none; }
-.stat-val { font-family: var(--serif); font-size: 28px; font-weight: 600; line-height: 1; margin-bottom: 5px; }
-.stat-label { font-size: 11px; color: var(--text-light); line-height: 1.4; }
-
-/* SECTIONS */
-.section { padding: 72px 0; border-bottom: 1px solid var(--border); }
-.section:last-child { border-bottom: none; }
-.section-label {
-  font-size: 11px; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.1em; color: var(--text-light); margin-bottom: 40px;
-}
-
-/* PROJECTS */
-.project {
-  padding: 40px 0; border-bottom: 1px solid var(--border);
-  display: grid; grid-template-columns: 1fr 2fr; gap: 48px; align-items: start;
-}
-.project:first-child { padding-top: 0; }
-.project:last-child { border-bottom: none; padding-bottom: 0; }
-.project-num { font-size: 11px; color: var(--text-light); margin-bottom: 8px; }
-.project-name { font-family: var(--serif); font-size: 18px; font-weight: 400; line-height: 1.3; margin-bottom: 8px; letter-spacing: -0.01em; }
-.project-role { font-size: 12px; font-weight: 500; color: var(--text-light); margin-bottom: 16px; }
-.project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.tag { font-size: 11px; padding: 3px 9px; border: 1px solid var(--border-dark); border-radius: 4px; color: var(--text-mid); background: var(--off); }
-.project-desc { font-size: 14px; line-height: 1.75; color: var(--text-mid); margin-bottom: 20px; font-weight: 300; }
-.project-highlights { display: flex; gap: 28px; flex-wrap: wrap; padding: 16px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 20px; }
-.highlight-val { font-size: 20px; font-weight: 600; font-family: var(--serif); color: var(--text); display: block; line-height: 1; margin-bottom: 3px; }
-.highlight-label { font-size: 11px; color: var(--text-light); }
-.tools-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 8px; }
-
-/* SKILLS */
-.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 64px; }
-.skills-group { margin-bottom: 36px; }
-.skills-group-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-.skill-item { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
-.skill-item:last-child { border-bottom: none; }
-.skill-cat { font-size: 11px; color: var(--text-light); }
-
-/* CERTS */
-.cert-list { display: flex; flex-direction: column; }
-.cert-item { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border); }
-.cert-item:last-child { border-bottom: none; }
-.cert-name { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
-.cert-issuer { font-size: 12px; color: var(--text-light); }
-.cert-date { font-size: 12px; color: var(--text-light); }
-.cert-badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px; background: #FFF8EC; color: #B07D2A; border: 1px solid #F0D898; }
-
-/* EDUCATION */
-.edu-item { padding: 24px 0; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr 2fr; gap: 48px; }
-.edu-item:last-child { border-bottom: none; }
-.edu-degree { font-family: var(--serif); font-size: 16px; font-weight: 400; line-height: 1.3; margin-bottom: 4px; }
-.edu-school { font-size: 13px; color: var(--text-mid); margin-bottom: 4px; }
-.edu-year { font-size: 12px; color: var(--text-light); }
-.edu-detail { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
-.edu-distinction { margin-top: 10px; font-size: 12px; color: var(--text); background: var(--off); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; line-height: 1.5; }
-.edu-distinction strong { font-weight: 600; }
-
-/* CONTACT */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-.contact-heading { font-family: var(--serif); font-size: 28px; font-weight: 400; line-height: 1.3; letter-spacing: -0.01em; margin-bottom: 16px; }
-.contact-body { font-size: 14px; line-height: 1.7; color: var(--text-mid); font-weight: 300; margin-bottom: 28px; }
-.contact-btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; background: var(--text); color: white; font-size: 13px; font-weight: 500; border-radius: 6px; transition: opacity 0.15s; }
-.contact-btn:hover { opacity: 0.85; }
-.contact-details { display: flex; flex-direction: column; }
-.contact-row { display: flex; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
-.contact-row:first-child { border-top: 1px solid var(--border); }
-.contact-row-label { color: var(--text-light); }
-.contact-row-val a { color: var(--text); transition: color 0.15s; }
-.contact-row-val a:hover { color: var(--text-mid); }
-
-/* FOOTER */
-footer { padding: 28px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-.footer-copy { font-size: 12px; color: var(--text-light); }
-.footer-links { display: flex; gap: 20px; }
-.footer-links a { font-size: 12px; color: var(--text-light); transition: color 0.15s; }
-.footer-links a:hover { color: var(--text); }
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  nav { padding: 0 20px; }
-  .nav-links a:not(.nav-hire) { display: none; }
-  .page { padding: 0 20px; }
-  .hero { padding: 48px 0 56px; }
-  .section { padding: 48px 0; }
-  .project { grid-template-columns: 1fr; gap: 20px; }
-  .stats-row { flex-wrap: wrap; }
-  .stat { flex: 1 1 45%; border-right: none; border-bottom: 1px solid var(--border); }
-  .skills-grid { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .edu-item { grid-template-columns: 1fr; gap: 12px; }
-  footer { padding: 20px; flex-direction: column; gap: 10px; }
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav>
-  <div class="nav-name">Sanele Mabuza</div>
-  <div class="nav-links">
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#contact" class="nav-hire">Get in touch</a>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-name">Sanele Mabuza</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#contact" class="nav-hire">Get in touch</a>
+    </nav>
   </div>
-</nav>
+</header>
 
-<div class="page">
+<main class="page" id="top">
 
-  <section class="section" id="contact">
-    <div class="section-label">Contact</div>
-    <div class="contact-grid">
-      <div>
-        <h3 class="contact-heading">Open to the right opportunity.</h3>
-        <p class="contact-body">Seeking entry-level roles in systems administration, infrastructure, data / ML engineering, or cybersecurity. Based in Pietermaritzburg, KZN — open to remote work and relocation.</p>
-        <a href="mailto:smabuza782@gmail.com" class="contact-btn">Send an email →</a>
-      </div>
-      <div class="contact-details">
-        <div class="contact-row"><span class="contact-row-label">Email</span><span class="contact-row-val"><a href="mailto:smabuza782@gmail.com">smabuza782@gmail.com</a></span></div>
-        <div class="contact-row"><span class="contact-row-label">Phone</span><span class="contact-row-val">078 460 8881</span></div>
-        <div class="contact-row"><span class="contact-row-label">Location</span><span class="contact-row-val">Pietermaritzburg, KZN, South Africa</span></div>
-        <div class="contact-row"><span class="contact-row-label">LinkedIn</span><span class="contact-row-val"><a href="https://www.linkedin.com/in/sanele-mabuza-a04742225/" target="_blank">linkedin.com/in/sanelemabuza ↗</a></span></div>
-        <div class="contact-row"><span class="contact-row-label">GitHub</span><span class="contact-row-val"><a href="https://github.com/Sanele4848" target="_blank">github.com/Sanele4848 ↗</a></span></div>
-        <div class="contact-row"><span class="contact-row-label">Availability</span><span class="contact-row-val" style="color:var(--green);font-weight:500;">Immediately available</span></div>
-      </div>
+  <section class="hero">
+    <p class="hero-available"><span class="dot" aria-hidden="true"></span>Immediately available</p>
+    <h1>ICT graduate building secure, data-driven systems.</h1>
+    <p class="hero-sub">I work across infrastructure, machine learning and cybersecurity risk, from configuring HPC clusters to quantifying multi-million rand exposure for a bank.</p>
+    <div class="hero-contact">
+      <a href="mailto:smabuza782@gmail.com">smabuza782@gmail.com</a>
+      <a href="https://github.com/Sanele4848" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/sanele-mabuza-a04742225/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
+
+    <dl class="stats-row">
+      <div class="stat"><dt class="stat-label">Qualification</dt><dd class="stat-val">NQF 7</dd></div>
+      <div class="stat"><dt class="stat-label">Risk exposure quantified</dt><dd class="stat-val">R32M+</dd></div>
+      <div class="stat"><dt class="stat-label">R² on flight-delay model</dt><dd class="stat-val">88.88%</dd></div>
+      <div class="stat"><dt class="stat-label">Final-year distinctions</dt><dd class="stat-val">3</dd></div>
+    </dl>
   </section>
 
   <section class="section" id="projects">
-    <div class="section-label">Projects</div>
+    <h2 class="section-title">Projects</h2>
 
-    <div class="project">
-      <div>
-        <div class="project-num">01 · 2025</div>
-        <div class="project-name">Imbokodo Bank Cybersecurity Risk Assessment</div>
-        <div class="project-role">Lead Risk Analyst · Team of 5</div>
-        <div class="project-tags">
-          <span class="tag">Risk Modelling</span><span class="tag">Monte Carlo</span><span class="tag">SARB</span><span class="tag">POPIA</span><span class="tag">Basel III</span>
-        </div>
-      </div>
-      <div>
+    <article class="project reveal">
+      <header class="project-head">
+        <p class="project-year">2025</p>
+        <h3 class="project-name">Imbokodo Bank Cybersecurity Risk Assessment</h3>
+        <p class="project-role">Lead Risk Analyst · Team of 5</p>
+        <ul class="project-tags">
+          <li class="tag">Risk Modelling</li><li class="tag">Monte Carlo</li><li class="tag">SARB</li><li class="tag">POPIA</li><li class="tag">Basel III</li>
+        </ul>
+      </header>
+      <div class="project-body">
         <p class="project-desc">Conducted a full quantitative cybersecurity risk assessment on three critical banking assets. Identified R32M+ in annualised loss exposure across 12 threat scenarios using ALE/SLE/ARO methodology with Monte Carlo simulation (10,000 iterations). Proposed a R4.39M control framework delivering 91.5% risk reduction with full compliance to SARB Directive 01/2024, POPIA, FICA, and Basel III.</p>
-        <div class="project-highlights">
-          <div><span class="highlight-val">R32M+</span><span class="highlight-label">Risk exposure identified</span></div>
-          <div><span class="highlight-val">91.5%</span><span class="highlight-label">Risk reduction</span></div>
-          <div><span class="highlight-val">568%</span><span class="highlight-label">Return on security investment</span></div>
-        </div>
-        <div class="tools-label">Tools & Frameworks</div>
-        <div class="project-tags">
-          <span class="tag">ALE / SLE / ARO</span><span class="tag">Monte Carlo Simulation</span><span class="tag">SARB Directive 01/2024</span><span class="tag">Threat Intelligence (SABRIC, ESET, IBM)</span><span class="tag">Data Visualisation</span>
-        </div>
+        <dl class="project-highlights">
+          <div><dt class="highlight-label">Risk exposure identified</dt><dd class="highlight-val">R32M+</dd></div>
+          <div><dt class="highlight-label">Risk reduction</dt><dd class="highlight-val">91.5%</dd></div>
+          <div><dt class="highlight-label">Return on security investment</dt><dd class="highlight-val">568%</dd></div>
+        </dl>
+        <h4 class="tools-label">Tools and frameworks</h4>
+        <ul class="project-tags">
+          <li class="tag">ALE / SLE / ARO</li><li class="tag">Monte Carlo Simulation</li><li class="tag">SARB Directive 01/2024</li><li class="tag">Threat Intelligence (SABRIC, ESET, IBM)</li><li class="tag">Data Visualisation</li>
+        </ul>
       </div>
-    </div>
+    </article>
 
-    <div class="project">
-      <div>
-        <div class="project-num">02 · 2024</div>
-        <div class="project-name">Predicting Flight Delays Using Machine Learning: An Analysis of U.S. Airline Performance</div>
-        <div class="project-role">Co-author · Data Scientist · BICT332 Distinction (81%)</div>
-        <div class="project-tags">
-          <span class="tag">Machine Learning</span><span class="tag">Python</span><span class="tag">Research Paper</span><span class="tag">Deployed App</span>
-        </div>
-      </div>
-      <div>
+    <article class="project reveal">
+      <header class="project-head">
+        <p class="project-year">2024</p>
+        <h3 class="project-name">Predicting Flight Delays Using Machine Learning: An Analysis of U.S. Airline Performance</h3>
+        <p class="project-role">Co-author · Data Scientist · BICT332 Distinction (81%)</p>
+        <ul class="project-tags">
+          <li class="tag">Machine Learning</li><li class="tag">Python</li><li class="tag">Research Paper</li><li class="tag">Deployed App</li>
+        </ul>
+      </header>
+      <div class="project-body">
         <p class="project-desc">Co-authored a full ML research paper analysing 132,695 records spanning 51.4M flights across 21 airlines and 389 U.S. airports (2013–2023). Benchmarked six regression models — Random Forest achieved R²=88.88% with MAE of 2.12 percentage points. Engineered 36 custom features including cyclical time encoding and operational stress indicators. Deployed a live prediction web application.</p>
-        <div class="project-highlights">
-          <div><span class="highlight-val">88.88%</span><span class="highlight-label">R² score</span></div>
-          <div><span class="highlight-val">6</span><span class="highlight-label">Models compared</span></div>
-          <div><span class="highlight-val">36</span><span class="highlight-label">Engineered features</span></div>
-        </div>
-        <div class="tools-label">Tools & Libraries</div>
-        <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Scikit-learn</span><span class="tag">Plotly</span><span class="tag">Streamlit</span><span class="tag">Joblib</span>
-        </div>
+        <dl class="project-highlights">
+          <div><dt class="highlight-label">R² score</dt><dd class="highlight-val">88.88%</dd></div>
+          <div><dt class="highlight-label">Models compared</dt><dd class="highlight-val">6</dd></div>
+          <div><dt class="highlight-label">Engineered features</dt><dd class="highlight-val">36</dd></div>
+        </dl>
+        <h4 class="tools-label">Tools and libraries</h4>
+        <ul class="project-tags">
+          <li class="tag">Python</li><li class="tag">Pandas</li><li class="tag">NumPy</li><li class="tag">Scikit-learn</li><li class="tag">Plotly</li><li class="tag">Streamlit</li><li class="tag">Joblib</li>
+        </ul>
       </div>
-    </div>
+    </article>
 
-    <div class="project">
-      <div>
-        <div class="project-num">03 · 2025</div>
-        <div class="project-name">MindMate — UMP Psychology Consultation Platform</div>
-        <div class="project-role">Backend Developer · Capstone (Distinction)</div>
-        <div class="project-tags">
-          <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Backend</span>
-        </div>
-      </div>
-      <div>
+    <article class="project reveal">
+      <header class="project-head">
+        <p class="project-year">2025</p>
+        <h3 class="project-name">MindMate — UMP Psychology Consultation Platform</h3>
+        <p class="project-role">Backend Developer · Capstone (Distinction)</p>
+        <ul class="project-tags">
+          <li class="tag">PHP</li><li class="tag">MySQL</li><li class="tag">Backend</li>
+        </ul>
+      </header>
+      <div class="project-body">
         <p class="project-desc">Contributed as backend developer on a six-person capstone team building a web platform connecting UMP students with university psychologists. Built the booking system with automated email confirmations and role-based access control for students, psychologists, and administrators. Reviewed by external software engineers and awarded a Distinction.</p>
-        <div class="tools-label">Tools & Libraries</div>
-        <div class="project-tags">
-          <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">PHPMailer (SMTP)</span><span class="tag">JavaScript</span><span class="tag">HTML / CSS</span><span class="tag">Bootstrap</span><span class="tag">Apache / XAMPP</span><span class="tag">Calendar API</span>
-        </div>
+        <h4 class="tools-label">Tools and libraries</h4>
+        <ul class="project-tags">
+          <li class="tag">PHP</li><li class="tag">MySQL</li><li class="tag">PHPMailer (SMTP)</li><li class="tag">JavaScript</li><li class="tag">HTML / CSS</li><li class="tag">Bootstrap</li><li class="tag">Apache / XAMPP</li><li class="tag">Calendar API</li>
+        </ul>
       </div>
-    </div>
+    </article>
   </section>
 
   <section class="section" id="skills">
-    <div class="section-label">Skills</div>
+    <h2 class="section-title">Skills</h2>
     <div class="skills-grid">
-      <div>
-        <div class="skills-group">
-          <div class="skills-group-title">Infrastructure & Systems</div>
-          <div class="skill-item"><span>Linux (CLI, system admin, bash)</span><span class="skill-cat">OS</span></div>
-          <div class="skill-item"><span>Windows (install, admin, support)</span><span class="skill-cat">OS</span></div>
-          <div class="skill-item"><span>OpenHPC 2.x — cluster setup & admin</span><span class="skill-cat">HPC</span></div>
-          <div class="skill-item"><span>Hardware — diagnostics, repair, upgrades</span><span class="skill-cat">Hardware</span></div>
+      <div class="skills-col">
+        <div class="skills-group reveal">
+          <h3 class="skills-group-title">Infrastructure and systems</h3>
+          <ul class="skill-list">
+            <li class="skill-item"><span>Linux (CLI, system admin, bash)</span><span class="skill-cat">OS</span></li>
+            <li class="skill-item"><span>Windows (install, admin, support)</span><span class="skill-cat">OS</span></li>
+            <li class="skill-item"><span>OpenHPC 2.x — cluster setup and admin</span><span class="skill-cat">HPC</span></li>
+            <li class="skill-item"><span>Hardware — diagnostics, repair, upgrades</span><span class="skill-cat">Hardware</span></li>
+          </ul>
         </div>
-        <div class="skills-group">
-          <div class="skills-group-title">Networking</div>
-          <div class="skill-item"><span>Firewall configuration</span><span class="skill-cat">Security</span></div>
-          <div class="skill-item"><span>Wireshark</span><span class="skill-cat">Analysis</span></div>
-          <div class="skill-item"><span>Network troubleshooting</span><span class="skill-cat">Support</span></div>
+        <div class="skills-group reveal">
+          <h3 class="skills-group-title">Networking</h3>
+          <ul class="skill-list">
+            <li class="skill-item"><span>Firewall configuration</span><span class="skill-cat">Security</span></li>
+            <li class="skill-item"><span>Wireshark</span><span class="skill-cat">Analysis</span></li>
+            <li class="skill-item"><span>Network troubleshooting</span><span class="skill-cat">Support</span></li>
+          </ul>
         </div>
-        <div class="skills-group">
-          <div class="skills-group-title">Data & Machine Learning</div>
-          <div class="skill-item"><span>Python — Pandas, NumPy, Scikit-learn</span><span class="skill-cat">ML</span></div>
-          <div class="skill-item"><span>Feature engineering & model evaluation</span><span class="skill-cat">ML</span></div>
-          <div class="skill-item"><span>Streamlit, Plotly</span><span class="skill-cat">Visualisation</span></div>
+        <div class="skills-group reveal">
+          <h3 class="skills-group-title">Data and machine learning</h3>
+          <ul class="skill-list">
+            <li class="skill-item"><span>Python — Pandas, NumPy, Scikit-learn</span><span class="skill-cat">ML</span></li>
+            <li class="skill-item"><span>Feature engineering and model evaluation</span><span class="skill-cat">ML</span></li>
+            <li class="skill-item"><span>Streamlit, Plotly</span><span class="skill-cat">Visualisation</span></li>
+          </ul>
         </div>
       </div>
-      <div>
-        <div class="skills-group">
-          <div class="skills-group-title">Development</div>
-          <div class="skill-item"><span>PHP, Java</span><span class="skill-cat">Backend</span></div>
-          <div class="skill-item"><span>HTML / CSS / JavaScript / Bootstrap</span><span class="skill-cat">Frontend</span></div>
-          <div class="skill-item"><span>MySQL</span><span class="skill-cat">Database</span></div>
+
+      <div class="skills-col">
+        <div class="skills-group reveal">
+          <h3 class="skills-group-title">Development</h3>
+          <ul class="skill-list">
+            <li class="skill-item"><span>PHP, Java</span><span class="skill-cat">Backend</span></li>
+            <li class="skill-item"><span>HTML / CSS / JavaScript / Bootstrap</span><span class="skill-cat">Frontend</span></li>
+            <li class="skill-item"><span>MySQL</span><span class="skill-cat">Database</span></li>
+          </ul>
         </div>
-        <div class="skills-group">
-          <div class="skills-group-title">Cybersecurity & Compliance</div>
-          <div class="skill-item"><span>Quantitative risk modelling (ALE/SLE/ARO)</span><span class="skill-cat">Risk</span></div>
-          <div class="skill-item"><span>Monte Carlo simulation</span><span class="skill-cat">Risk</span></div>
-          <div class="skill-item"><span>AWS cloud engineering</span><span class="skill-cat">Cloud</span></div>
-          <div class="skill-item"><span>SARB / POPIA / FICA / Basel III</span><span class="skill-cat">Regulatory</span></div>
+        <div class="skills-group reveal">
+          <h3 class="skills-group-title">Cybersecurity and compliance</h3>
+          <ul class="skill-list">
+            <li class="skill-item"><span>Quantitative risk modelling (ALE/SLE/ARO)</span><span class="skill-cat">Risk</span></li>
+            <li class="skill-item"><span>Monte Carlo simulation</span><span class="skill-cat">Risk</span></li>
+            <li class="skill-item"><span>AWS cloud engineering</span><span class="skill-cat">Cloud</span></li>
+            <li class="skill-item"><span>SARB / POPIA / FICA / Basel III</span><span class="skill-cat">Regulatory</span></li>
+          </ul>
         </div>
-        <div class="skills-group">
-          <div class="skills-group-title">Certifications</div>
-          <div class="cert-list">
-            <div class="cert-item">
-              <div><div class="cert-name">CHPC - NITheCS Coding Summer School</div><div class="cert-issuer">Centre for HPC & NITheCS · CSIR</div></div>
-              <div class="cert-date">Jan – Feb 2026</div>
-            </div>
-            <div class="cert-item">
-              <div><div class="cert-name">OpenHPC 2.x Virtual Cluster Lab</div><div class="cert-issuer">HPC Ecosystems Project · CSIR / NICIS</div></div>
+        <div class="skills-group reveal">
+          <h3 class="skills-group-title">Certifications</h3>
+          <ul class="skill-list">
+            <li class="cert-item">
+              <div><p class="cert-name">CHPC - NITheCS Coding Summer School</p><p class="cert-issuer">Centre for HPC &amp; NITheCS · CSIR</p></div>
+              <span class="cert-date">Jan – Feb 2026</span>
+            </li>
+            <li class="cert-item">
+              <div><p class="cert-name">OpenHPC 2.x Virtual Cluster Lab</p><p class="cert-issuer">HPC Ecosystems Project · CSIR / NICIS</p></div>
               <span class="cert-badge">In progress</span>
-            </div>
-            <div class="cert-item">
-              <div><div class="cert-name">AWS Cloud Bootcamp — Certificate of Achievement</div><div class="cert-issuer">CloudSec Network (CSN) · Cert ID: CSN-2RFMEIJ9</div></div>
-              <div class="cert-date">1 Sep 2025</div>
-            </div>
-            <div class="cert-item">
-              <div><div class="cert-name">Certificate in Full Stack Development</div><div class="cert-issuer">FNB App Academy · ITVarsity · Cert No. AOTYAA072025</div></div>
-              <div class="cert-date">14 Jul 2025</div>
-            </div>
-          </div>
+            </li>
+            <li class="cert-item">
+              <div><p class="cert-name">AWS Cloud Bootcamp — Certificate of Achievement</p><p class="cert-issuer">CloudSec Network (CSN) · Cert ID: CSN-2RFMEIJ9</p></div>
+              <span class="cert-date">1 Sep 2025</span>
+            </li>
+            <li class="cert-item">
+              <div><p class="cert-name">Certificate in Full Stack Development</p><p class="cert-issuer">FNB App Academy · ITVarsity · Cert No. AOTYAA072025</p></div>
+              <span class="cert-date">14 Jul 2025</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" id="education">
-    <div class="section-label">Education</div>
-    <div class="edu-item">
+    <h2 class="section-title">Education</h2>
+
+    <article class="edu-item reveal">
       <div>
-        <div class="edu-degree">Bachelor of Information & Communication Technology</div>
-        <div class="edu-school">University of Mpumalanga</div>
-        <div class="edu-year">2022 – 2025 · Awarded May 2026</div>
+        <h3 class="edu-degree">Bachelor of Information &amp; Communication Technology</h3>
+        <p class="edu-school">University of Mpumalanga</p>
+        <p class="edu-year">2022 – 2025 · Awarded May 2026</p>
       </div>
       <div>
-        <div class="edu-detail">NQF Level 7 · Qualification No. 118273<br>Modules: Communication Networks, Cybersecurity, Systems Development, AI Applications, Web Development, Mobile Development, Database Systems</div>
-        <div class="edu-distinction"><strong>Final year distinctions (NQF Level 7):</strong> Communication Networks 85% · AI Applications 81% · System Development Project / Capstone 79%</div>
+        <p class="edu-detail">NQF Level 7 · Qualification No. 118273<br>Modules: Communication Networks, Cybersecurity, Systems Development, AI Applications, Web Development, Mobile Development, Database Systems</p>
+        <p class="edu-distinction"><strong>Final year distinctions (NQF Level 7):</strong> Communication Networks 85% · AI Applications 81% · System Development Project / Capstone 79%</p>
       </div>
-    </div>
-    <div class="edu-item">
+    </article>
+
+    <article class="edu-item reveal">
       <div>
-        <div class="edu-degree">National Senior Certificate</div>
-        <div class="edu-school">Pietermaritzburg, KZN</div>
-        <div class="edu-year">2020</div>
+        <h3 class="edu-degree">National Senior Certificate</h3>
+        <p class="edu-school">Pietermaritzburg, KZN</p>
+        <p class="edu-year">2020</p>
       </div>
       <div>
-        <div class="edu-detail">Mathematics · Physical Sciences · English · IsiZulu · Geography · Life Sciences</div>
+        <p class="edu-detail">Mathematics · Physical Sciences · English · IsiZulu · Geography · Life Sciences</p>
       </div>
-    </div>
+    </article>
   </section>
 
   <section class="section" id="contact">
-    <div class="section-label">Contact</div>
+    <h2 class="section-title">Contact</h2>
     <div class="contact-grid">
-      <div>
+      <div class="contact-intro reveal">
         <h3 class="contact-heading">Open to the right opportunity.</h3>
         <p class="contact-body">Seeking entry-level roles in systems administration, infrastructure, data / ML engineering, or cybersecurity. Based in Pietermaritzburg, KZN — open to remote work and relocation.</p>
-        <a href="/cdn-cgi/l/email-protection#76051b1714030c17414e4436111b171f1a5815191b" class="contact-btn">Send an email →</a>
+        <a href="mailto:smabuza782@gmail.com" class="contact-btn">Send an email</a>
       </div>
-      <div class="contact-details">
-        <div class="contact-row"><span class="contact-row-label">Email</span><span class="contact-row-val"><a href="/cdn-cgi/l/email-protection#9fecf2fefdeae5fea8a7addff8f2fef6f3b1fcf0f2"><span class="__cf_email__" data-cfemail="c9baa4a8abbcb3a8fef1fb89aea4a8a0a5e7aaa6a4">[email&#160;protected]</span></a></span></div>
-        <div class="contact-row"><span class="contact-row-label">Phone</span><span class="contact-row-val">078 460 8881</span></div>
-        <div class="contact-row"><span class="contact-row-label">Location</span><span class="contact-row-val">Pietermaritzburg, KZN, South Africa</span></div>
-        <div class="contact-row"><span class="contact-row-label">LinkedIn</span><span class="contact-row-val"><a href="https://www.linkedin.com/in/sanele-mabuza-a04742225/" target="_blank">linkedin.com/in/sanelemabuza ↗</a></span></div>
-        <div class="contact-row"><span class="contact-row-label">GitHub</span><span class="contact-row-val"><a href="https://github.com/Sanele4848" target="_blank">github.com/Sanele4848 ↗</a></span></div>
-        <div class="contact-row"><span class="contact-row-label">Availability</span><span class="contact-row-val" style="color:var(--green);font-weight:500;">Immediately available</span></div>
-      </div>
+      <dl class="contact-details reveal">
+        <div class="contact-row"><dt>Email</dt><dd><a href="mailto:smabuza782@gmail.com">smabuza782@gmail.com</a></dd></div>
+        <div class="contact-row"><dt>Phone</dt><dd><a href="tel:+27784608881">078 460 8881</a></dd></div>
+        <div class="contact-row"><dt>Location</dt><dd>Pietermaritzburg, KZN, South Africa</dd></div>
+        <div class="contact-row"><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/sanele-mabuza-a04742225/" target="_blank" rel="noopener">sanele-mabuza</a></dd></div>
+        <div class="contact-row"><dt>GitHub</dt><dd><a href="https://github.com/Sanele4848" target="_blank" rel="noopener">Sanele4848</a></dd></div>
+        <div class="contact-row"><dt>Availability</dt><dd class="is-available">Immediately available</dd></div>
+      </dl>
     </div>
   </section>
 
-</div>
+</main>
 
-<footer>
-  <span class="fo
+<footer class="site-footer">
+  <span class="footer-copy">© 2026 Sanele Mabuza</span>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="mailto:smabuza782@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/sanele-mabuza-a04742225/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/Sanele4848" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</footer>
 
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  items.forEach(function (el) { io.observe(el); });
+
+  var nav = document.querySelector('.site-nav');
+  var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+</body>
+</html>
