@@ -7,7 +7,7 @@
   var ticking = false;
   function setActive(hash) {
     tabs.forEach(function (t) { t.classList.toggle('active', t.getAttribute('href') === hash); });
-  }
+  } 
   function update() {
     var y = window.scrollY;
     root.style.setProperty('--p', Math.min(1, Math.max(0, (y - 34) / 18)).toFixed(3));
